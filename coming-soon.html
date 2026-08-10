@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coming soon — OFF2 Entertainment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;300;400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .stub { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 120px 24px; gap: 22px; }
+  .stub .eyebrow { margin: 0; }
+  .stub h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: .95;
+    letter-spacing: .02em; text-transform: uppercase; color: var(--white); }
+  .stub p { margin: 0; max-width: 480px; color: var(--text-dim); font-size: 16px; line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">OFF2</a>
+    <div class="nav__links">
+      <a href="festivals.html">Festivals</a>
+      <a href="index.html#events">Events</a>
+      <a href="coming-soon.html?title=Venues">Venues</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#about">About Us</a>
+      <a href="coming-soon.html?title=Careers">Careers</a>
+    </div>
+    <a href="index.html#events" class="nav__cta">Tickets</a>
+  </nav>
+  <main class="stub">
+    <div class="eyebrow">This page isn't built yet</div>
+    <h1 id="stub-title">Coming soon</h1>
+    <p>This section of the site hasn't been implemented yet. <a href="index.html">Back to the homepage →</a></p>
+  </main>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var title = params.get('title');
+  if (title) document.getElementById('stub-title').textContent = title;
+</script>
+</body>
+</html>

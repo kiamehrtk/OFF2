@@ -1,0 +1,86 @@
+{
+  "_readme": "This file is NOT wired into the site yet — index.html currently has all copy hardcoded so the page works today without a build step. It exists as the target content schema for whichever CMS gets connected later. Every field here has a matching `data-cms=\"...\"` attribute on the corresponding element in index.html, so wiring a CMS later is a mechanical find-and-replace: swap each data-cms element's static text/src for a template call reading this same key. See README.md for the recommended next steps.",
+
+  "nav": {
+    "logoText": "OFF2"
+  },
+
+  "hero": {
+    "autoplaySeconds": 6,
+    "_note": "Only Doomsnight and Soul Rise are shown — Insomnia and Sofi Tukker slides were removed by request. Each slide has two images: `image` (16:9 banner, desktop/tablet) and `imageMobile` (portrait poster, used below 720px via a <picture><source media> swap in index.html — see .hero__media there).",
+    "slides": [
+      {
+        "kicker": "Festival · Halloween Edition",
+        "title": "Doomsnight",
+        "meta": "31 Oct · Harbour Event Centre",
+        "image": "images/hero-doomsnight.jpg",
+        "imageMobile": "images/festival-doomsnight.jpg",
+        "imageCaption": "Doomsnight festival poster"
+      },
+      {
+        "kicker": "Festival · Sunrise Series",
+        "title": "Soul Rise",
+        "meta": "06 Jun · Cascade Valley",
+        "image": "images/hero-soulrise.jpg",
+        "imageMobile": "images/festival-soulrise.jpg",
+        "imageCaption": "Soul Rise festival poster"
+      }
+    ]
+  },
+
+  "intro": {
+    "eyebrow": "OFF2 Entertainment Inc.",
+    "heading": "We build festivals as engineered environments — chrome, light and low frequency.",
+    "body": "Four festivals, one venue, and a year-round programme across the west coast. Every show is designed end to end: stage, sound, light, and the space between them."
+  },
+
+  "_festivalsNote": "This same array backs both the homepage teaser grid (#festivals in index.html) and the full festivals.html index page. `mood` is the per-festival accent color used only on festivals.html (CSS custom property --mood on each .festival-entry) — a restrained per-festival hover tint inside the shared grid, per the Festivals page brief. `link` is null because individual festival pages (e.g. /festivals/insomnia) aren't built yet — both pages point at coming-soon.html?title=<name> until they exist.",
+  "festivals": [
+    { "name": "Insomnia", "date": "14—16 Aug 2026", "description": "Three nights of bass and light on the harbour front.", "image": "images/festival-insomnia.jpg", "mood": "#4FE0D6", "link": null },
+    { "name": "Doomsnight", "date": "31 Oct 2026", "description": "The Halloween edition. Four stages, one long night.", "image": "images/festival-doomsnight.jpg", "mood": "#E0554A", "link": null },
+    { "name": "Soul Rise", "date": "06 Jun 2026", "description": "A sunrise set in Cascade Valley. House and soul.", "image": "images/festival-soulrise.jpg", "mood": "#9FB4C7", "link": null },
+    { "name": "Null Horizon", "date": "Announcing soon", "description": "Winter warehouse series. Register for first access.", "image": null, "mood": "#6B7CC2", "link": null }
+  ],
+
+  "events": [
+    { "name": "Mike Williams", "date": "Fri 14 Aug", "genre": "Big Room", "doors": "Doors 22:00", "image": "images/event-mike-williams.jpg", "link": null },
+    { "name": "KREAM & Adam Sellouk", "date": "Sat 15 Aug", "genre": "Liquid:Lab", "doors": "19+", "image": "images/event-kream.jpg", "link": null },
+    { "name": "DJ Diesel", "date": "Fri 21 Aug", "genre": "aka Shaquille O'Neal", "doors": "Doors 22:00", "image": "images/event-dj-diesel.jpg", "link": null },
+    { "name": "Kevin De Vries", "date": "Sat 29 Aug", "genre": "Soulrise Afterparty", "doors": "Doors 23:00", "image": "images/event-soulrise-afterparty.jpg", "link": null },
+    { "name": "Vikkstar", "date": "Sat 05 Sep", "genre": "Live", "doors": "Doors 22:00", "image": "images/event-vikkstar.jpg", "link": null }
+  ],
+
+  "gallery": {
+    "enabled": true,
+    "images": [
+      { "slot": "g1", "image": null, "caption": "Crowd / main stage, portrait" },
+      { "slot": "g2", "image": null, "caption": "Lighting rig detail" },
+      { "slot": "g3", "image": null, "caption": "DJ booth, low light" },
+      { "slot": "g4", "image": null, "caption": "Wide venue shot, 16:9" }
+    ]
+  },
+
+  "about": {
+    "heading": "Since 2026, on the west coast",
+    "body": "OFF2 Entertainment Inc. produces festivals, tours and residencies, and operates the Harbour Event Centre. We handle programming, production and ticketing in house — which is why our shows feel built rather than booked.",
+    "image": null,
+    "imageCaption": "Venue or crew photo, 4:5",
+    "stats": [
+      { "value": "4", "label": "Festivals" },
+      { "value": "1,400", "label": "Venue capacity" },
+      { "value": "60+", "label": "Shows a year" }
+    ]
+  },
+
+  "newsletter": {
+    "eyebrow": "First access",
+    "heading": "Line-ups and presales before anyone else",
+    "body": "One email a month. Announcements, presale codes, nothing else."
+  },
+
+  "footer": {
+    "brand": "OFF2",
+    "address": "OFF2 Entertainment Inc.\nHarbour Event Centre, Vancouver BC",
+    "copyright": "© 2026 OFF2 Entertainment Inc."
+  }
+}
