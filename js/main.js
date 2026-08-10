@@ -96,6 +96,105 @@
     });
   }
 
+  /* ---------- Filter groups (events.html venues, gallery.html albums) ----------
+   * Any element with [data-filter-group] wraps a set of [data-filter-btn]
+   * buttons and the [data-filter-key] items they show/hide. A button with
+   * value "all" matches everything. An optional [data-filter-empty="<key>"]
+   * inside the group is revealed when that key matches nothing.
+   */
+  var FILTER_FADE_MS = 260; // keep in sync with .is-filtered-out transition
+
+  function initFilterGroups() {
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-filter-group]'));
+
+    groups.forEach(function (group) {
+      var buttons = Array.prototype.slice.call(group.querySelectorAll('[data-filter-btn]'));
+      var items = Array.prototype.slice.call(group.querySelectorAll('[data-filter-key]'));
+      var empties = Array.prototype.slice.call(group.querySelectorAll('[data-filter-empty]'));
+      if (!buttons.length || !items.length) return;
+
+      function apply(key) {
+        var visible = 0;
+        items.forEach(function (item) {
+          var match = key === 'all' || item.getAttribute('data-filter-key') === key;
+          if (match) {
+            visible++;
+            item.style.display = '';
+            // Next frame so display:'' lands before the class is removed —
+            // otherwise there's no starting value to transition from and the
+            // fade-in is skipped.
+            requestAnimationFrame(function () { item.classList.remove('is-filtered-out'); });
+          } else {
+            item.classList.add('is-filtered-out');
+            setTimeout(function () {
+              if (item.classList.contains('is-filtered-out')) item.style.display = 'none';
+            }, FILTER_FADE_MS);
+          }
+        });
+
+        empties.forEach(function (el) {
+          el.classList.toggle('is-visible', visible === 0 && el.getAttribute('data-filter-empty') === key);
+        });
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          buttons.forEach(function (b) {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-pressed', 'true');
+          apply(btn.getAttribute('data-filter-btn'));
+        });
+      });
+    });
+  }
+
+  /* ---------- Lightbox (gallery.html) ---------- */
+  function initLightbox() {
+    var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+    var box = document.getElementById('lightbox');
+    if (!triggers.length || !box) return;
+
+    var figure = box.querySelector('.lightbox__figure');
+    var caption = box.querySelector('.lightbox__caption');
+    var closeBtn = box.querySelector('.lightbox__close');
+    var lastFocused = null;
+
+    function open(trigger) {
+      lastFocused = trigger;
+      var img = trigger.querySelector('img');
+      var text = trigger.getAttribute('data-lightbox') || '';
+      // Real photo when one exists, otherwise mirror the placeholder tile so
+      // the lightbox never opens onto an empty frame.
+      figure.innerHTML = img
+        ? '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || '') + '">'
+        : '<div class="lightbox__placeholder">Image not uploaded yet</div>';
+      caption.textContent = text;
+      box.classList.add('is-open');
+      box.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function close() {
+      box.classList.remove('is-open');
+      box.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    }
+
+    triggers.forEach(function (t) {
+      t.addEventListener('click', function (e) { e.preventDefault(); open(t); });
+    });
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && box.classList.contains('is-open')) close();
+    });
+  }
+
   /* ---------- Newsletter form (stub — wire to real provider later) ---------- */
   function initNewsletter() {
     var form = document.getElementById('newsletter-form');
@@ -123,6 +222,8 @@
     safe(initHero, 'initHero');
     safe(initReveal, 'initReveal');
     safe(initNav, 'initNav');
+    safe(initFilterGroups, 'initFilterGroups');
+    safe(initLightbox, 'initLightbox');
     safe(initNewsletter, 'initNewsletter');
   }
 

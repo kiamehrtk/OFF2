@@ -16,13 +16,36 @@ festivals.html           Festivals index — one entry per festival (Insomnia,
                          coming-soon.html?title=<name> — the individual festival
                          page (e.g. /festivals/insomnia) is a separate template
                          not built yet.
-coming-soon.html         Stand-in for pages not built yet (Venues, Careers, Press,
-                         individual festival pages, full Events/Gallery pages) —
-                         the nav links to this with a ?title= so it doesn't 404
+events.html              Events index — every event across both venues, with a
+                         venue-filter (All / Harbour Event Centre / Tradex) that
+                         fades cards in/out via data-venue attributes. No real
+                         Tradex events exist yet, so that filter shows an honest
+                         empty state (data-venue-empty) instead of invented shows.
+venues.html              Venues page — one stacked section per owned venue
+                         (Harbour Event Centre, Tradex), each with a 4-up image
+                         strip, description, address + map link, and a "Book this
+                         venue" CTA. Gallery images are still placeholders; no
+                         capacity/spec numbers by request.
+gallery.html             Gallery page — photos from past shows in a mixed-size
+                         grid, filterable by album (Lost in Dreams / Insomnia /
+                         Doomsnight / Soul Rise / Harbour Nights), with a
+                         click-to-enlarge lightbox (Esc or click-out to close).
+                         The 6 Lost in Dreams tiles are real photography; the
+                         other albums are still placeholders.
+careers.html             Careers page — headline, a 3-up culture block, and the
+                         open-positions section. There are no real openings, so it
+                         renders the "no open roles / send us your resume" block
+                         rather than invented listings; the .job-row markup for a
+                         live roster is documented in an HTML comment in the file.
+coming-soon.html         Stand-in for pages not built yet (Press, booking enquiry
+                         flow, individual festival/event pages, full Gallery
+                         page) — linked with a ?title= so it doesn't 404
 css/style.css            All styling. Every design token (colors, fonts, spacing)
                          is a CSS custom property at the top of the file.
 js/main.js               Hero carousel autoplay/dots/arrows, scroll-reveal
-                         animation, mobile nav toggle, newsletter form stub
+                         animation, mobile nav toggle, generic filter groups
+                         (events.html venues + gallery.html albums), gallery
+                         lightbox, newsletter form stub
 content/site-content.json  Documents the CMS content shape (see below) — not
                          wired in yet, just the target schema
 ```
@@ -62,10 +85,19 @@ below 720px width it swaps to the portrait poster instead (via a `<picture><sour
 media="(max-width: 720px)">` in each `.hero__media` in `index.html`) — a banner
 crops away too much of the artwork at phone widths, the poster doesn't.
 
+- **Gallery** (`gallery.html`): 6 photos from **Lost in Dreams**
+  (`images/gallery-*.jpg`) — downsized from ~5400px/8-13MB originals to 1600px
+  wide (~1.7MB total), which stays sharp in the lightbox (capped at 1100px).
+  Captions describe what's visible in each frame; the event name came from you,
+  since nothing readable in the photos identifies the show.
+
 Still **placeholders** — no source photo exists yet, to be provided later:
 
 - Festival card 4, **Null Horizon**
-- All 4 **gallery** shots
+- The homepage's 4 **gallery** teaser tiles
+- The 12 non-Lost-in-Dreams **gallery page** tiles (Insomnia, Doomsnight,
+  Soul Rise, Harbour Nights)
+- Both **venues** galleries (4 images each)
 - The **about** section's venue/crew photo
 
 To fill one of the remaining slots: drop the real image file into `images/`,

@@ -15,16 +15,16 @@
 
   <!-- ============ NAV ============ -->
   <nav class="nav" id="site-nav">
-    <a href="index.html" class="nav__logo" data-cms="nav.logoText">OFF2</a>
+    <a href="index.html" class="nav__logo" data-cms="nav.logo" aria-label="OFF2 — home"><img src="images/off2-logo.png" alt="OFF2"></a>
     <div class="nav__links">
       <a href="festivals.html">Festivals</a>
-      <a href="#events">Events</a>
-      <a href="coming-soon.html?title=Venues">Venues</a>
-      <a href="#gallery">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="venues.html">Venues</a>
+      <a href="gallery.html">Gallery</a>
       <a href="#about">About Us</a>
-      <a href="coming-soon.html?title=Careers">Careers</a>
+      <a href="careers.html">Careers</a>
     </div>
-    <a href="#events" class="nav__cta">Tickets</a>
+    <a href="events.html" class="nav__cta">Tickets</a>
     <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -156,11 +156,12 @@
         <div>
           <div class="eyebrow">02 — Events</div>
           <h2>Harbour Event Centre</h2>
+          <p class="section-head__note">Our home venue on the waterfront. 1,400 capacity, full-range rig, open year round.</p>
         </div>
-        <div class="section-head__note">Our home venue on the waterfront. 1,400 capacity, full-range rig, open year round.</div>
+        <a href="events.html" class="link-more">All events →</a>
       </div>
       <div class="rail" data-reveal>
-        <a href="coming-soon.html?title=Events" class="card">
+        <a href="coming-soon.html?title=Mike+Williams" class="card">
           <div class="card__media"><div class="img-slot is-filled"><img src="images/event-mike-williams.jpg" alt="Mike Williams — Harbour, 14 August 2026"></div></div>
           <div class="card__body">
             <div class="card__date" data-cms="events[0].date">Fri 14 Aug</div>
@@ -169,7 +170,7 @@
             <div class="card__tickets">Tickets →</div>
           </div>
         </a>
-        <a href="coming-soon.html?title=Events" class="card">
+        <a href="coming-soon.html?title=KREAM+%26+Adam+Sellouk" class="card">
           <div class="card__media"><div class="img-slot is-filled"><img src="images/event-kream.jpg" alt="KREAM &amp; Adam Sellouk — Liquid:Lab Vancouver, Harbour Event Convention Centre, 15 August 2026"></div></div>
           <div class="card__body">
             <div class="card__date" data-cms="events[1].date">Sat 15 Aug</div>
@@ -178,7 +179,7 @@
             <div class="card__tickets">Tickets →</div>
           </div>
         </a>
-        <a href="coming-soon.html?title=Events" class="card">
+        <a href="coming-soon.html?title=DJ+Diesel" class="card">
           <div class="card__media"><div class="img-slot is-filled"><img src="images/event-dj-diesel.jpg" alt="DJ Diesel (Shaquille O'Neal) — Harbour, 21 August 2026"></div></div>
           <div class="card__body">
             <div class="card__date" data-cms="events[2].date">Fri 21 Aug</div>
@@ -187,7 +188,7 @@
             <div class="card__tickets">Tickets →</div>
           </div>
         </a>
-        <a href="coming-soon.html?title=Events" class="card">
+        <a href="coming-soon.html?title=Soulrise+Afterparty" class="card">
           <div class="card__media"><div class="img-slot is-filled"><img src="images/event-soulrise-afterparty.jpg" alt="Soulrise Official After-Party — Kevin De Vries, Son of Son, Daijo — Harbour, 29 August 2026"></div></div>
           <div class="card__body">
             <div class="card__date" data-cms="events[3].date">Sat 29 Aug</div>
@@ -196,7 +197,7 @@
             <div class="card__tickets">Tickets →</div>
           </div>
         </a>
-        <a href="coming-soon.html?title=Events" class="card">
+        <a href="coming-soon.html?title=Vikkstar" class="card">
           <div class="card__media"><div class="img-slot is-filled"><img src="images/event-vikkstar.jpg" alt="Vikkstar — Harbour, 5 September 2026"></div></div>
           <div class="card__body">
             <div class="card__date" data-cms="events[4].date">Sat 05 Sep</div>
@@ -217,7 +218,7 @@
           <div class="eyebrow">03 — Gallery</div>
           <h2>From the floor</h2>
         </div>
-        <a href="coming-soon.html?title=Gallery" class="link-more">Full gallery →</a>
+        <a href="gallery.html" class="link-more">Full gallery →</a>
       </div>
       <div class="gallery-grid" data-reveal>
         <div class="g1"><div class="img-slot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg><span>Crowd / main stage, portrait</span></div></div>
@@ -276,20 +277,20 @@
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
-          <div class="footer-brand">OFF2</div>
+          <div class="footer-brand"><img src="images/off2-logo.png" alt="OFF2"></div>
           <div class="footer-address">OFF2 Entertainment Inc.<br />Harbour Event Centre, Vancouver BC</div>
         </div>
         <div class="footer-col">
           <div class="footer-col__head">Explore</div>
           <a href="festivals.html">Festivals</a>
-          <a href="#events">Events</a>
-          <a href="coming-soon.html?title=Venues">Venues</a>
-          <a href="#gallery">Gallery</a>
+          <a href="events.html">Events</a>
+          <a href="venues.html">Venues</a>
+          <a href="gallery.html">Gallery</a>
         </div>
         <div class="footer-col">
           <div class="footer-col__head">Company</div>
           <a href="#about">About us</a>
-          <a href="coming-soon.html?title=Careers">Careers</a>
+          <a href="careers.html">Careers</a>
           <a href="coming-soon.html?title=Press">Press</a>
         </div>
         <div class="footer-col">

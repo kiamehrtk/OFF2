@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Festivals — OFF2 Entertainment</title>
-<meta name="description" content="Insomnia, Doomsnight, Soul Rise and Null Horizon — the four festivals OFF2 Entertainment Inc. produces across the west coast.">
+<title>Events — OFF2 Entertainment</title>
+<meta name="description" content="What's on at Harbour Event Centre and Tradex — OFF2 Entertainment's ongoing event programming across both venues.">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;300;400;500;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -17,8 +17,8 @@
   <nav class="nav" id="site-nav">
     <a href="index.html" class="nav__logo" data-cms="nav.logo" aria-label="OFF2 — home"><img src="images/off2-logo.png" alt="OFF2"></a>
     <div class="nav__links">
-      <a href="festivals.html" aria-current="page">Festivals</a>
-      <a href="events.html">Events</a>
+      <a href="festivals.html">Festivals</a>
+      <a href="events.html" aria-current="page">Events</a>
       <a href="venues.html">Venues</a>
       <a href="gallery.html">Gallery</a>
       <a href="index.html#about">About Us</a>
@@ -41,73 +41,96 @@
   <!-- ============ PAGE HEADER ============ -->
   <section class="page-header">
     <div class="page-header-inner" data-reveal>
-      <div class="eyebrow">Festivals</div>
-      <h1>Four festivals. One region-wide season.</h1>
-      <p>OFF2 produces four annual festivals across the west coast — each with its own sound, setting and identity, built end to end by the same in-house team that runs the Harbour Event Centre.</p>
+      <div class="eyebrow">Events</div>
+      <h1>What's on, venue by venue.</h1>
+      <p>The ongoing show calendar across both OFF2 venues — Harbour Event Centre on the Vancouver waterfront and Tradex in Abbotsford. This sits alongside the festivals: same team, same standard, smaller rooms.</p>
     </div>
   </section>
 
   <div class="hr-beam" aria-hidden="true"></div>
 
-  <!-- ============ FESTIVAL GRID ============ -->
+  <!-- ============ EVENT GRID ============ -->
   <section class="section">
-    <div class="section-inner">
-      <div class="festival-grid">
-        <a href="coming-soon.html?title=Insomnia" class="festival-entry" data-reveal style="--mood: #4FE0D6;">
-          <div class="festival-entry__media">
-            <div class="img-slot is-filled"><img src="images/festival-insomnia.jpg" alt="Insomnia festival poster"></div>
-          </div>
-          <div class="festival-entry__body">
-            <div class="festival-entry__mood" aria-hidden="true"></div>
-            <div class="festival-entry__date">14—16 Aug 2026</div>
-            <h2 class="festival-entry__name">Insomnia</h2>
-            <p class="festival-entry__tagline">Three nights of bass and light on the harbour front.</p>
-            <span class="festival-entry__cta">View festival →</span>
-          </div>
-        </a>
-
-        <a href="coming-soon.html?title=Doomsnight" class="festival-entry" data-reveal style="--mood: #E0554A;">
-          <div class="festival-entry__media">
-            <div class="img-slot is-filled"><img src="images/festival-doomsnight.jpg" alt="Doomsnight festival poster"></div>
-          </div>
-          <div class="festival-entry__body">
-            <div class="festival-entry__mood" aria-hidden="true"></div>
-            <div class="festival-entry__date">31 Oct 2026</div>
-            <h2 class="festival-entry__name">Doomsnight</h2>
-            <p class="festival-entry__tagline">The Halloween edition. Four stages, one long night.</p>
-            <span class="festival-entry__cta">View festival →</span>
-          </div>
-        </a>
-
-        <a href="coming-soon.html?title=Soul+Rise" class="festival-entry" data-reveal style="--mood: #9FB4C7;">
-          <div class="festival-entry__media">
-            <div class="img-slot is-filled"><img src="images/festival-soulrise.jpg" alt="Soul Rise Music Festival poster"></div>
-          </div>
-          <div class="festival-entry__body">
-            <div class="festival-entry__mood" aria-hidden="true"></div>
-            <div class="festival-entry__date">06 Jun 2026</div>
-            <h2 class="festival-entry__name">Soul Rise</h2>
-            <p class="festival-entry__tagline">A sunrise set in Cascade Valley. House and soul.</p>
-            <span class="festival-entry__cta">View festival →</span>
-          </div>
-        </a>
-
-        <a href="coming-soon.html?title=Null+Horizon" class="festival-entry" data-reveal style="--mood: #6B7CC2;">
-          <div class="festival-entry__media">
-            <div class="img-slot">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              <span>Null Horizon poster 3:4</span>
-            </div>
-          </div>
-          <div class="festival-entry__body">
-            <div class="festival-entry__mood" aria-hidden="true"></div>
-            <div class="festival-entry__date">Announcing soon</div>
-            <h2 class="festival-entry__name">Null Horizon</h2>
-            <p class="festival-entry__tagline">Winter warehouse series. Register for first access.</p>
-            <span class="festival-entry__cta">View festival →</span>
-          </div>
-        </a>
+    <div class="section-inner" data-filter-group>
+      <div class="venue-filter" data-reveal role="group" aria-label="Filter events by venue">
+        <button type="button" data-filter-btn="all" class="is-active" aria-pressed="true">All venues</button>
+        <button type="button" data-filter-btn="harbour" aria-pressed="false">Harbour Event Centre</button>
+        <button type="button" data-filter-btn="tradex" aria-pressed="false">Tradex</button>
       </div>
+
+      <div class="event-grid">
+        <div class="event-item" data-filter-key="harbour" data-reveal>
+          <a href="coming-soon.html?title=Mike+Williams" class="card">
+            <div class="card__media"><div class="img-slot is-filled"><img src="images/event-mike-williams.jpg" alt="Mike Williams — Harbour Event Centre, 14 August 2026"></div></div>
+            <div class="card__body">
+              <div class="card__date">Fri 14 Aug</div>
+              <div class="card__name">Mike Williams</div>
+              <div class="card__venue">Harbour Event Centre</div>
+              <p class="card__desc card__desc--event">Big room and future rave from one of dance music's most consistent headliners.</p>
+              <div class="card__row"><span>Big Room</span><span>Doors 22:00</span></div>
+              <div class="card__tickets">Tickets →</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="event-item" data-filter-key="harbour" data-reveal>
+          <a href="coming-soon.html?title=KREAM+%26+Adam+Sellouk" class="card">
+            <div class="card__media"><div class="img-slot is-filled"><img src="images/event-kream.jpg" alt="KREAM &amp; Adam Sellouk — Liquid:Lab, Harbour Event Centre, 15 August 2026"></div></div>
+            <div class="card__body">
+              <div class="card__date">Sat 15 Aug</div>
+              <div class="card__name">KREAM &amp; Adam Sellouk</div>
+              <div class="card__venue">Harbour Event Centre</div>
+              <p class="card__desc card__desc--event">Liquid:Lab's house night returns to Harbour with KREAM and Adam Sellouk behind the decks.</p>
+              <div class="card__row"><span>Liquid:Lab</span><span>19+</span></div>
+              <div class="card__tickets">Tickets →</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="event-item" data-filter-key="harbour" data-reveal>
+          <a href="coming-soon.html?title=DJ+Diesel" class="card">
+            <div class="card__media"><div class="img-slot is-filled"><img src="images/event-dj-diesel.jpg" alt="DJ Diesel (Shaquille O'Neal) — Harbour Event Centre, 21 August 2026"></div></div>
+            <div class="card__body">
+              <div class="card__date">Fri 21 Aug</div>
+              <div class="card__name">DJ Diesel</div>
+              <div class="card__venue">Harbour Event Centre</div>
+              <p class="card__desc card__desc--event">Shaquille O'Neal's DJ alter ego brings trap, bass and arena-sized energy to the floor.</p>
+              <div class="card__row"><span>aka Shaquille O'Neal</span><span>Doors 22:00</span></div>
+              <div class="card__tickets">Tickets →</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="event-item" data-filter-key="harbour" data-reveal>
+          <a href="coming-soon.html?title=Soulrise+Afterparty" class="card">
+            <div class="card__media"><div class="img-slot is-filled"><img src="images/event-soulrise-afterparty.jpg" alt="Soulrise Official After-Party — Kevin De Vries, Son of Son, Daijo — Harbour Event Centre, 29 August 2026"></div></div>
+            <div class="card__body">
+              <div class="card__date">Sat 29 Aug</div>
+              <div class="card__name">Kevin De Vries</div>
+              <div class="card__venue">Harbour Event Centre</div>
+              <p class="card__desc card__desc--event">The official Soulrise after-party — Kevin De Vries, Son of Son and Daijo close out the night.</p>
+              <div class="card__row"><span>Soulrise Afterparty</span><span>Doors 23:00</span></div>
+              <div class="card__tickets">Tickets →</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="event-item" data-filter-key="harbour" data-reveal>
+          <a href="coming-soon.html?title=Vikkstar" class="card">
+            <div class="card__media"><div class="img-slot is-filled"><img src="images/event-vikkstar.jpg" alt="Vikkstar — Harbour Event Centre, 5 September 2026"></div></div>
+            <div class="card__body">
+              <div class="card__date">Sat 05 Sep</div>
+              <div class="card__name">Vikkstar</div>
+              <div class="card__venue">Harbour Event Centre</div>
+              <p class="card__desc card__desc--event">A late-summer live set to close out the run at Harbour.</p>
+              <div class="card__row"><span>Live</span><span>Doors 22:00</span></div>
+              <div class="card__tickets">Tickets →</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <p class="venue-empty" data-filter-empty="tradex">No Tradex shows on sale yet — check back soon, or <a href="index.html#top">join the list</a> for first access.</p>
     </div>
   </section>
 

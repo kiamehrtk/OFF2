@@ -42,14 +42,54 @@
     { "name": "Null Horizon", "date": "Announcing soon", "description": "Winter warehouse series. Register for first access.", "image": null, "mood": "#6B7CC2", "link": null }
   ],
 
+  "_eventsNote": "Backs both the homepage teaser rail (#events in index.html) and the full events.html grid. `venue` drives events.html's filter tabs (data-venue-filter) — every real event so far is 'harbour'; the 'tradex' tab has no entries yet so events.html shows its empty state (data-venue-empty) for that filter rather than fabricated shows. `description` is only used on events.html (the homepage rail has no room for it).",
   "events": [
-    { "name": "Mike Williams", "date": "Fri 14 Aug", "genre": "Big Room", "doors": "Doors 22:00", "image": "images/event-mike-williams.jpg", "link": null },
-    { "name": "KREAM & Adam Sellouk", "date": "Sat 15 Aug", "genre": "Liquid:Lab", "doors": "19+", "image": "images/event-kream.jpg", "link": null },
-    { "name": "DJ Diesel", "date": "Fri 21 Aug", "genre": "aka Shaquille O'Neal", "doors": "Doors 22:00", "image": "images/event-dj-diesel.jpg", "link": null },
-    { "name": "Kevin De Vries", "date": "Sat 29 Aug", "genre": "Soulrise Afterparty", "doors": "Doors 23:00", "image": "images/event-soulrise-afterparty.jpg", "link": null },
-    { "name": "Vikkstar", "date": "Sat 05 Sep", "genre": "Live", "doors": "Doors 22:00", "image": "images/event-vikkstar.jpg", "link": null }
+    { "name": "Mike Williams", "date": "Fri 14 Aug", "venue": "harbour", "genre": "Big Room", "doors": "Doors 22:00", "description": "Big room and future rave from one of dance music's most consistent headliners.", "image": "images/event-mike-williams.jpg", "link": null },
+    { "name": "KREAM & Adam Sellouk", "date": "Sat 15 Aug", "venue": "harbour", "genre": "Liquid:Lab", "doors": "19+", "description": "Liquid:Lab's house night returns to Harbour with KREAM and Adam Sellouk behind the decks.", "image": "images/event-kream.jpg", "link": null },
+    { "name": "DJ Diesel", "date": "Fri 21 Aug", "venue": "harbour", "genre": "aka Shaquille O'Neal", "doors": "Doors 22:00", "description": "Shaquille O'Neal's DJ alter ego brings trap, bass and arena-sized energy to the floor.", "image": "images/event-dj-diesel.jpg", "link": null },
+    { "name": "Kevin De Vries", "date": "Sat 29 Aug", "venue": "harbour", "genre": "Soulrise Afterparty", "doors": "Doors 23:00", "description": "The official Soulrise after-party — Kevin De Vries, Son of Son and Daijo close out the night.", "image": "images/event-soulrise-afterparty.jpg", "link": null },
+    { "name": "Vikkstar", "date": "Sat 05 Sep", "venue": "harbour", "genre": "Live", "doors": "Doors 22:00", "description": "A late-summer live set to close out the run at Harbour.", "image": "images/event-vikkstar.jpg", "link": null }
   ],
 
+  "_venuesNote": "Backs venues.html — one stacked section per owned venue. `id` matches the section anchor and the events.html venue-filter key, so an event's `venue` value links to the venue described here. No capacity/spec numbers by request. All gallery images are still placeholders awaiting real venue photography.",
+  "venues": [
+    {
+      "id": "harbour",
+      "name": "Harbour Event Centre",
+      "description": [
+        "Our home room on the Vancouver waterfront — a low-ceilinged, high-impact space built for nights that run long. Dark surfaces, a full-range rig and sightlines that keep the floor tight to the booth.",
+        "It carries most of the year-round programme: touring headliners, label nights, festival after-parties and the residencies we develop in house. It's also available to book for private and corporate events."
+      ],
+      "address": "750 Pacific Blvd\nVancouver, BC",
+      "mapUrl": "https://maps.google.com/?q=750+Pacific+Blvd+Vancouver+BC",
+      "bookingUrl": null,
+      "gallery": [
+        { "image": null, "caption": "HEC Gallery Image 1 — main floor, full crowd" },
+        { "image": null, "caption": "HEC Gallery Image 2 — booth & lighting rig" },
+        { "image": null, "caption": "HEC Gallery Image 3 — bar / mezzanine" },
+        { "image": null, "caption": "HEC Gallery Image 4 — exterior, waterfront" }
+      ]
+    },
+    {
+      "id": "tradex",
+      "name": "Tradex",
+      "description": [
+        "An open-span exhibition hall in Abbotsford — effectively a blank box, which is exactly why we use it. Nothing about the room dictates the show, so the staging, rigging and layout get designed from scratch each time.",
+        "It's the room we scale into when a production outgrows Harbour: large-format festivals, expos, trade shows and full-build one-offs."
+      ],
+      "address": "1190 Cornell St\nAbbotsford, BC",
+      "mapUrl": "https://maps.google.com/?q=Tradex+Abbotsford+BC",
+      "bookingUrl": null,
+      "gallery": [
+        { "image": null, "caption": "Tradex Gallery Image 1 — main hall, staged" },
+        { "image": null, "caption": "Tradex Gallery Image 2 — open floor / build-out" },
+        { "image": null, "caption": "Tradex Gallery Image 3 — rigging & production" },
+        { "image": null, "caption": "Tradex Gallery Image 4 — exterior / entrance" }
+      ]
+    }
+  ],
+
+  "_galleryNote": "`gallery` is the homepage's 4-tile teaser section; `galleryPage` is the full gallery.html grid. EVERY image is null — OFF2 has no event photography on file yet, so both render labeled placeholders rather than stand-in stock photos. `album` matches gallery.html's filter buttons (data-filter-btn) and reuses the festival/venue ids used elsewhere. `size` maps to the .gallery-tile--wide / --tall grid modifiers that break up the even grid; omit it for a standard tile.",
   "gallery": {
     "enabled": true,
     "images": [
@@ -57,6 +97,38 @@
       { "slot": "g2", "image": null, "caption": "Lighting rig detail" },
       { "slot": "g3", "image": null, "caption": "DJ booth, low light" },
       { "slot": "g4", "image": null, "caption": "Wide venue shot, 16:9" }
+    ]
+  },
+
+  "galleryPage": {
+    "heading": "From the floor.",
+    "intro": "Photos from the festivals and the venue nights — crowds, rigs, booths and the rooms in between. Shot across Lost in Dreams, Insomnia, Doomsnight, Soul Rise and the Harbour Event Centre.",
+    "albums": [
+      { "id": "lostindreams", "label": "Lost in Dreams" },
+      { "id": "insomnia", "label": "Insomnia" },
+      { "id": "doomsnight", "label": "Doomsnight" },
+      { "id": "soulrise", "label": "Soul Rise" },
+      { "id": "harbour", "label": "Harbour Nights" }
+    ],
+    "images": [
+      { "album": "lostindreams", "size": "wide", "image": "images/gallery-blue-lasers.jpg", "caption": "Lost in Dreams — blue laser fan over the main floor" },
+      { "album": "lostindreams", "image": "images/gallery-booth-red.jpg", "caption": "Lost in Dreams — the room from behind the booth" },
+      { "album": "lostindreams", "image": "images/gallery-crowd-green.jpg", "caption": "Lost in Dreams — packed floor under the laser rig" },
+      { "album": "lostindreams", "image": "images/gallery-stage-green.jpg", "caption": "Lost in Dreams — stage wash from the barrier" },
+      { "album": "lostindreams", "image": "images/gallery-booth-teal.jpg", "caption": "Lost in Dreams — confetti from the booth" },
+      { "album": "lostindreams", "size": "wide", "image": "images/gallery-led-wall.jpg", "caption": "Lost in Dreams — LED wall and CO2 jets" },
+      { "album": "insomnia", "image": null, "caption": "Insomnia — main stage, opening night" },
+      { "album": "insomnia", "image": null, "caption": "Insomnia — crowd, front barrier" },
+      { "album": "insomnia", "image": null, "caption": "Insomnia — lighting rig from the deck" },
+      { "album": "doomsnight", "size": "tall", "image": null, "caption": "Doomsnight — stage build, Pacific Coliseum" },
+      { "album": "doomsnight", "image": null, "caption": "Doomsnight — costumed crowd" },
+      { "album": "doomsnight", "image": null, "caption": "Doomsnight — pyro, main room" },
+      { "album": "soulrise", "image": null, "caption": "Soul Rise — sunrise set, Ambleside Park" },
+      { "album": "soulrise", "size": "wide", "image": null, "caption": "Soul Rise — wide field shot at golden hour" },
+      { "album": "soulrise", "image": null, "caption": "Soul Rise — booth, Anyma set" },
+      { "album": "harbour", "image": null, "caption": "Harbour — main floor, full room" },
+      { "album": "harbour", "image": null, "caption": "Harbour — DJ booth, low light" },
+      { "album": "harbour", "image": null, "caption": "Harbour — the room from the mezzanine" }
     ]
   },
 
@@ -70,6 +142,25 @@
       { "value": "1,400", "label": "Venue capacity" },
       { "value": "60+", "label": "Shows a year" }
     ]
+  },
+
+  "_careersNote": "Backs careers.html. `positions` is intentionally EMPTY — there are no real openings, and inventing listings would send real applicants through a real application flow for jobs that don't exist. While it's empty the page renders the open-application block; add entries (shape shown in `_positionShape`) and swap in the .job-list markup documented in careers.html to switch it to a live roster. `applyEmail` is a placeholder address — replace with the real hiring inbox or an ATS link before launch.",
+  "careers": {
+    "heading": "Come build live entertainment on the west coast.",
+    "intro": "We produce our own festivals, run our own rooms and handle production in house — which means the people here get their hands on the whole thing, not one slice of it.",
+    "culture": [
+      { "label": "The work", "body": "A season here runs from a warehouse in January to a valley at sunrise in June. Same crew, wildly different rooms — you learn fast because nothing repeats." },
+      { "label": "The team", "body": "Small enough that your call is the call. Programming, production and ticketing sit in the same room, so decisions don't disappear into a process." },
+      { "label": "The standard", "body": "We'd rather build one show properly than book four. If you care about the difference between good enough and actually right, you'll fit." }
+    ],
+    "applyEmail": "careers@off2.ca",
+    "_positionShape": { "title": "Role title", "department": "Production", "location": "Harbour Event Centre | Tradex | Remote", "applyUrl": null },
+    "positions": [],
+    "openApplication": {
+      "heading": "No open roles right now",
+      "body": "We hire in bursts around the season, and we keep good applications on file for when we do. If you work in production, lighting, sound, programming or front of house, introduce yourself — we'd rather know you before we need you.",
+      "ctaLabel": "Send us your resume"
+    }
   },
 
   "newsletter": {
