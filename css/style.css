@@ -321,9 +321,6 @@ section { position: relative; }
   letter-spacing: .02em; text-transform: uppercase; color: var(--white);
 }
 .about p { margin: 0 0 34px; max-width: 500px; font-size: 17px; line-height: 1.75; color: var(--text-dim); text-wrap: pretty; }
-.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 520px; }
-.stat-num { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 1; color: var(--white); }
-.stat-label { font-family: var(--font-display); font-size: 13px; letter-spacing: .24em; text-transform: uppercase; color: var(--text-dimmer); margin-top: 8px; }
 .about-media {
   position: relative; aspect-ratio: 4 / 5; border: 1px solid var(--border-strong); overflow: hidden;
 }

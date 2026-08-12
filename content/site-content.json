@@ -1,10 +1,8 @@
 {
   "_readme": "This file is NOT wired into the site yet — index.html currently has all copy hardcoded so the page works today without a build step. It exists as the target content schema for whichever CMS gets connected later. Every field here has a matching `data-cms=\"...\"` attribute on the corresponding element in index.html, so wiring a CMS later is a mechanical find-and-replace: swap each data-cms element's static text/src for a template call reading this same key. See README.md for the recommended next steps.",
-
   "nav": {
     "logoText": "OFF2"
   },
-
   "hero": {
     "autoplaySeconds": 6,
     "_note": "Only Doomsnight and Soul Rise are shown — Insomnia and Sofi Tukker slides were removed by request. Each slide has two images: `image` (16:9 banner, desktop/tablet) and `imageMobile` (portrait poster, used below 720px via a <picture><source media> swap in index.html — see .hero__media there).",
@@ -27,30 +25,99 @@
       }
     ]
   },
-
   "intro": {
     "eyebrow": "OFF2 Entertainment Inc.",
     "heading": "We build festivals as engineered environments — chrome, light and low frequency.",
     "body": "Four festivals, one venue, and a year-round programme across the west coast. Every show is designed end to end: stage, sound, light, and the space between them."
   },
-
   "_festivalsNote": "This same array backs both the homepage teaser grid (#festivals in index.html) and the full festivals.html index page. `mood` is the per-festival accent color used only on festivals.html (CSS custom property --mood on each .festival-entry) — a restrained per-festival hover tint inside the shared grid, per the Festivals page brief. `link` is null because individual festival pages (e.g. /festivals/insomnia) aren't built yet — both pages point at coming-soon.html?title=<name> until they exist.",
   "festivals": [
-    { "name": "Insomnia", "date": "14—16 Aug 2026", "description": "Three nights of bass and light on the harbour front.", "image": "images/festival-insomnia.jpg", "mood": "#4FE0D6", "link": null },
-    { "name": "Doomsnight", "date": "31 Oct 2026", "description": "The Halloween edition. Four stages, one long night.", "image": "images/festival-doomsnight.jpg", "mood": "#E0554A", "link": null },
-    { "name": "Soul Rise", "date": "06 Jun 2026", "description": "A sunrise set in Cascade Valley. House and soul.", "image": "images/festival-soulrise.jpg", "mood": "#9FB4C7", "link": null },
-    { "name": "Null Horizon", "date": "Announcing soon", "description": "Winter warehouse series. Register for first access.", "image": null, "mood": "#6B7CC2", "link": null }
+    {
+      "name": "Insomnia",
+      "date": "14—16 Aug 2026",
+      "description": "Three nights of bass and light on the harbour front.",
+      "image": "images/festival-insomnia.jpg",
+      "mood": "#4FE0D6",
+      "link": null
+    },
+    {
+      "name": "Doomsnight",
+      "date": "31 Oct 2026",
+      "description": "The Halloween edition. Four stages, one long night.",
+      "image": "images/festival-doomsnight.jpg",
+      "mood": "#E0554A",
+      "link": null
+    },
+    {
+      "name": "Soul Rise",
+      "date": "06 Jun 2026",
+      "description": "A sunrise set in Cascade Valley. House and soul.",
+      "image": "images/festival-soulrise.jpg",
+      "mood": "#9FB4C7",
+      "link": null
+    },
+    {
+      "name": "Lost in Dreams",
+      "date": "15 Feb 2026",
+      "description": "ILLENIUM, Dabin and Elephante at Tradex, Abbotsford.",
+      "image": "images/festival-lostindreams.jpg",
+      "mood": "#3CE0A8",
+      "link": null
+    }
   ],
-
   "_eventsNote": "Backs both the homepage teaser rail (#events in index.html) and the full events.html grid. `venue` drives events.html's filter tabs (data-venue-filter) — every real event so far is 'harbour'; the 'tradex' tab has no entries yet so events.html shows its empty state (data-venue-empty) for that filter rather than fabricated shows. `description` is only used on events.html (the homepage rail has no room for it).",
   "events": [
-    { "name": "Mike Williams", "date": "Fri 14 Aug", "venue": "harbour", "genre": "Big Room", "doors": "Doors 22:00", "description": "Big room and future rave from one of dance music's most consistent headliners.", "image": "images/event-mike-williams.jpg", "link": null },
-    { "name": "KREAM & Adam Sellouk", "date": "Sat 15 Aug", "venue": "harbour", "genre": "Liquid:Lab", "doors": "19+", "description": "Liquid:Lab's house night returns to Harbour with KREAM and Adam Sellouk behind the decks.", "image": "images/event-kream.jpg", "link": null },
-    { "name": "DJ Diesel", "date": "Fri 21 Aug", "venue": "harbour", "genre": "aka Shaquille O'Neal", "doors": "Doors 22:00", "description": "Shaquille O'Neal's DJ alter ego brings trap, bass and arena-sized energy to the floor.", "image": "images/event-dj-diesel.jpg", "link": null },
-    { "name": "Kevin De Vries", "date": "Sat 29 Aug", "venue": "harbour", "genre": "Soulrise Afterparty", "doors": "Doors 23:00", "description": "The official Soulrise after-party — Kevin De Vries, Son of Son and Daijo close out the night.", "image": "images/event-soulrise-afterparty.jpg", "link": null },
-    { "name": "Vikkstar", "date": "Sat 05 Sep", "venue": "harbour", "genre": "Live", "doors": "Doors 22:00", "description": "A late-summer live set to close out the run at Harbour.", "image": "images/event-vikkstar.jpg", "link": null }
+    {
+      "name": "Mike Williams",
+      "date": "Fri 14 Aug",
+      "venue": "harbour",
+      "genre": "Big Room",
+      "doors": "Doors 22:00",
+      "description": "Big room and future rave from one of dance music's most consistent headliners.",
+      "image": "images/event-mike-williams.jpg",
+      "link": null
+    },
+    {
+      "name": "KREAM & Adam Sellouk",
+      "date": "Sat 15 Aug",
+      "venue": "harbour",
+      "genre": "Liquid:Lab",
+      "doors": "19+",
+      "description": "Liquid:Lab's house night returns to Harbour with KREAM and Adam Sellouk behind the decks.",
+      "image": "images/event-kream.jpg",
+      "link": null
+    },
+    {
+      "name": "DJ Diesel",
+      "date": "Fri 21 Aug",
+      "venue": "harbour",
+      "genre": "aka Shaquille O'Neal",
+      "doors": "Doors 22:00",
+      "description": "Shaquille O'Neal's DJ alter ego brings trap, bass and arena-sized energy to the floor.",
+      "image": "images/event-dj-diesel.jpg",
+      "link": null
+    },
+    {
+      "name": "Kevin De Vries",
+      "date": "Sat 29 Aug",
+      "venue": "harbour",
+      "genre": "Soulrise Afterparty",
+      "doors": "Doors 23:00",
+      "description": "The official Soulrise after-party — Kevin De Vries, Son of Son and Daijo close out the night.",
+      "image": "images/event-soulrise-afterparty.jpg",
+      "link": null
+    },
+    {
+      "name": "Vikkstar",
+      "date": "Sat 05 Sep",
+      "venue": "harbour",
+      "genre": "Live",
+      "doors": "Doors 22:00",
+      "description": "A late-summer live set to close out the run at Harbour.",
+      "image": "images/event-vikkstar.jpg",
+      "link": null
+    }
   ],
-
   "_venuesNote": "Backs venues.html — one stacked section per owned venue. `id` matches the section anchor and the events.html venue-filter key, so an event's `venue` value links to the venue described here. No capacity/spec numbers by request. All gallery images are still placeholders awaiting real venue photography.",
   "venues": [
     {
@@ -64,10 +131,22 @@
       "mapUrl": "https://maps.google.com/?q=750+Pacific+Blvd+Vancouver+BC",
       "bookingUrl": null,
       "gallery": [
-        { "image": null, "caption": "HEC Gallery Image 1 — main floor, full crowd" },
-        { "image": null, "caption": "HEC Gallery Image 2 — booth & lighting rig" },
-        { "image": null, "caption": "HEC Gallery Image 3 — bar / mezzanine" },
-        { "image": null, "caption": "HEC Gallery Image 4 — exterior, waterfront" }
+        {
+          "image": null,
+          "caption": "HEC Gallery Image 1 — main floor, full crowd"
+        },
+        {
+          "image": null,
+          "caption": "HEC Gallery Image 2 — booth & lighting rig"
+        },
+        {
+          "image": null,
+          "caption": "HEC Gallery Image 3 — bar / mezzanine"
+        },
+        {
+          "image": null,
+          "caption": "HEC Gallery Image 4 — exterior, waterfront"
+        }
       ]
     },
     {
@@ -81,80 +160,204 @@
       "mapUrl": "https://maps.google.com/?q=Tradex+Abbotsford+BC",
       "bookingUrl": null,
       "gallery": [
-        { "image": null, "caption": "Tradex Gallery Image 1 — main hall, staged" },
-        { "image": null, "caption": "Tradex Gallery Image 2 — open floor / build-out" },
-        { "image": null, "caption": "Tradex Gallery Image 3 — rigging & production" },
-        { "image": null, "caption": "Tradex Gallery Image 4 — exterior / entrance" }
+        {
+          "image": null,
+          "caption": "Tradex Gallery Image 1 — main hall, staged"
+        },
+        {
+          "image": null,
+          "caption": "Tradex Gallery Image 2 — open floor / build-out"
+        },
+        {
+          "image": null,
+          "caption": "Tradex Gallery Image 3 — rigging & production"
+        },
+        {
+          "image": null,
+          "caption": "Tradex Gallery Image 4 — exterior / entrance"
+        }
       ]
     }
   ],
-
   "_galleryNote": "`gallery` is the homepage's 4-tile teaser section; `galleryPage` is the full gallery.html grid. EVERY image is null — OFF2 has no event photography on file yet, so both render labeled placeholders rather than stand-in stock photos. `album` matches gallery.html's filter buttons (data-filter-btn) and reuses the festival/venue ids used elsewhere. `size` maps to the .gallery-tile--wide / --tall grid modifiers that break up the even grid; omit it for a standard tile.",
   "gallery": {
     "enabled": true,
     "images": [
-      { "slot": "g1", "image": null, "caption": "Crowd / main stage, portrait" },
-      { "slot": "g2", "image": null, "caption": "Lighting rig detail" },
-      { "slot": "g3", "image": null, "caption": "DJ booth, low light" },
-      { "slot": "g4", "image": null, "caption": "Wide venue shot, 16:9" }
+      {
+        "slot": "g1",
+        "image": null,
+        "caption": "Crowd / main stage, portrait"
+      },
+      {
+        "slot": "g2",
+        "image": null,
+        "caption": "Lighting rig detail"
+      },
+      {
+        "slot": "g3",
+        "image": null,
+        "caption": "DJ booth, low light"
+      },
+      {
+        "slot": "g4",
+        "image": null,
+        "caption": "Wide venue shot, 16:9"
+      }
     ]
   },
-
   "galleryPage": {
     "heading": "From the floor.",
     "intro": "Photos from the festivals and the venue nights — crowds, rigs, booths and the rooms in between. Shot across Lost in Dreams, Insomnia, Doomsnight, Soul Rise and the Harbour Event Centre.",
     "albums": [
-      { "id": "lostindreams", "label": "Lost in Dreams" },
-      { "id": "insomnia", "label": "Insomnia" },
-      { "id": "doomsnight", "label": "Doomsnight" },
-      { "id": "soulrise", "label": "Soul Rise" },
-      { "id": "harbour", "label": "Harbour Nights" }
+      {
+        "id": "lostindreams",
+        "label": "Lost in Dreams"
+      },
+      {
+        "id": "insomnia",
+        "label": "Insomnia"
+      },
+      {
+        "id": "doomsnight",
+        "label": "Doomsnight"
+      },
+      {
+        "id": "soulrise",
+        "label": "Soul Rise"
+      },
+      {
+        "id": "harbour",
+        "label": "Harbour Nights"
+      }
     ],
     "images": [
-      { "album": "lostindreams", "size": "wide", "image": "images/gallery-blue-lasers.jpg", "caption": "Lost in Dreams — blue laser fan over the main floor" },
-      { "album": "lostindreams", "image": "images/gallery-booth-red.jpg", "caption": "Lost in Dreams — the room from behind the booth" },
-      { "album": "lostindreams", "image": "images/gallery-crowd-green.jpg", "caption": "Lost in Dreams — packed floor under the laser rig" },
-      { "album": "lostindreams", "image": "images/gallery-stage-green.jpg", "caption": "Lost in Dreams — stage wash from the barrier" },
-      { "album": "lostindreams", "image": "images/gallery-booth-teal.jpg", "caption": "Lost in Dreams — confetti from the booth" },
-      { "album": "lostindreams", "size": "wide", "image": "images/gallery-led-wall.jpg", "caption": "Lost in Dreams — LED wall and CO2 jets" },
-      { "album": "insomnia", "image": null, "caption": "Insomnia — main stage, opening night" },
-      { "album": "insomnia", "image": null, "caption": "Insomnia — crowd, front barrier" },
-      { "album": "insomnia", "image": null, "caption": "Insomnia — lighting rig from the deck" },
-      { "album": "doomsnight", "size": "tall", "image": null, "caption": "Doomsnight — stage build, Pacific Coliseum" },
-      { "album": "doomsnight", "image": null, "caption": "Doomsnight — costumed crowd" },
-      { "album": "doomsnight", "image": null, "caption": "Doomsnight — pyro, main room" },
-      { "album": "soulrise", "image": null, "caption": "Soul Rise — sunrise set, Ambleside Park" },
-      { "album": "soulrise", "size": "wide", "image": null, "caption": "Soul Rise — wide field shot at golden hour" },
-      { "album": "soulrise", "image": null, "caption": "Soul Rise — booth, Anyma set" },
-      { "album": "harbour", "image": null, "caption": "Harbour — main floor, full room" },
-      { "album": "harbour", "image": null, "caption": "Harbour — DJ booth, low light" },
-      { "album": "harbour", "image": null, "caption": "Harbour — the room from the mezzanine" }
+      {
+        "album": "lostindreams",
+        "size": "wide",
+        "image": "images/gallery-blue-lasers.jpg",
+        "caption": "Lost in Dreams — blue laser fan over the main floor"
+      },
+      {
+        "album": "lostindreams",
+        "image": "images/gallery-booth-red.jpg",
+        "caption": "Lost in Dreams — the room from behind the booth"
+      },
+      {
+        "album": "lostindreams",
+        "image": "images/gallery-crowd-green.jpg",
+        "caption": "Lost in Dreams — packed floor under the laser rig"
+      },
+      {
+        "album": "lostindreams",
+        "image": "images/gallery-stage-green.jpg",
+        "caption": "Lost in Dreams — stage wash from the barrier"
+      },
+      {
+        "album": "lostindreams",
+        "image": "images/gallery-booth-teal.jpg",
+        "caption": "Lost in Dreams — confetti from the booth"
+      },
+      {
+        "album": "lostindreams",
+        "size": "wide",
+        "image": "images/gallery-led-wall.jpg",
+        "caption": "Lost in Dreams — LED wall and CO2 jets"
+      },
+      {
+        "album": "insomnia",
+        "image": null,
+        "caption": "Insomnia — main stage, opening night"
+      },
+      {
+        "album": "insomnia",
+        "image": null,
+        "caption": "Insomnia — crowd, front barrier"
+      },
+      {
+        "album": "insomnia",
+        "image": null,
+        "caption": "Insomnia — lighting rig from the deck"
+      },
+      {
+        "album": "doomsnight",
+        "size": "tall",
+        "image": null,
+        "caption": "Doomsnight — stage build, Pacific Coliseum"
+      },
+      {
+        "album": "doomsnight",
+        "image": null,
+        "caption": "Doomsnight — costumed crowd"
+      },
+      {
+        "album": "doomsnight",
+        "image": null,
+        "caption": "Doomsnight — pyro, main room"
+      },
+      {
+        "album": "soulrise",
+        "image": null,
+        "caption": "Soul Rise — sunrise set, Ambleside Park"
+      },
+      {
+        "album": "soulrise",
+        "size": "wide",
+        "image": null,
+        "caption": "Soul Rise — wide field shot at golden hour"
+      },
+      {
+        "album": "soulrise",
+        "image": null,
+        "caption": "Soul Rise — booth, Anyma set"
+      },
+      {
+        "album": "harbour",
+        "image": null,
+        "caption": "Harbour — main floor, full room"
+      },
+      {
+        "album": "harbour",
+        "image": null,
+        "caption": "Harbour — DJ booth, low light"
+      },
+      {
+        "album": "harbour",
+        "image": null,
+        "caption": "Harbour — the room from the mezzanine"
+      }
     ]
   },
-
   "about": {
-    "heading": "Since 2026, on the west coast",
-    "body": "OFF2 Entertainment Inc. produces festivals, tours and residencies, and operates the Harbour Event Centre. We handle programming, production and ticketing in house — which is why our shows feel built rather than booked.",
+    "heading": "Independent, on the west coast",
+    "body": "OFF2 Entertainment Inc. produces festivals, tours and residencies, and operates the Harbour Event Centre and Tradex. We handle programming, production and ticketing in house — which is why our shows feel built rather than booked.",
     "image": null,
-    "imageCaption": "Venue or crew photo, 4:5",
-    "stats": [
-      { "value": "4", "label": "Festivals" },
-      { "value": "1,400", "label": "Venue capacity" },
-      { "value": "60+", "label": "Shows a year" }
-    ]
+    "imageCaption": "Venue or crew photo, 4:5"
   },
-
   "_careersNote": "Backs careers.html. `positions` is intentionally EMPTY — there are no real openings, and inventing listings would send real applicants through a real application flow for jobs that don't exist. While it's empty the page renders the open-application block; add entries (shape shown in `_positionShape`) and swap in the .job-list markup documented in careers.html to switch it to a live roster. `applyEmail` is a placeholder address — replace with the real hiring inbox or an ATS link before launch.",
   "careers": {
     "heading": "Come build live entertainment on the west coast.",
     "intro": "We produce our own festivals, run our own rooms and handle production in house — which means the people here get their hands on the whole thing, not one slice of it.",
     "culture": [
-      { "label": "The work", "body": "A season here runs from a warehouse in January to a valley at sunrise in June. Same crew, wildly different rooms — you learn fast because nothing repeats." },
-      { "label": "The team", "body": "Small enough that your call is the call. Programming, production and ticketing sit in the same room, so decisions don't disappear into a process." },
-      { "label": "The standard", "body": "We'd rather build one show properly than book four. If you care about the difference between good enough and actually right, you'll fit." }
+      {
+        "label": "The work",
+        "body": "A season here runs from a warehouse in January to a valley at sunrise in June. Same crew, wildly different rooms — you learn fast because nothing repeats."
+      },
+      {
+        "label": "The team",
+        "body": "Small enough that your call is the call. Programming, production and ticketing sit in the same room, so decisions don't disappear into a process."
+      },
+      {
+        "label": "The standard",
+        "body": "We'd rather build one show properly than book four. If you care about the difference between good enough and actually right, you'll fit."
+      }
     ],
     "applyEmail": "careers@off2.ca",
-    "_positionShape": { "title": "Role title", "department": "Production", "location": "Harbour Event Centre | Tradex | Remote", "applyUrl": null },
+    "_positionShape": {
+      "title": "Role title",
+      "department": "Production",
+      "location": "Harbour Event Centre | Tradex | Remote",
+      "applyUrl": null
+    },
     "positions": [],
     "openApplication": {
       "heading": "No open roles right now",
@@ -162,13 +365,11 @@
       "ctaLabel": "Send us your resume"
     }
   },
-
   "newsletter": {
     "eyebrow": "First access",
     "heading": "Line-ups and presales before anyone else",
     "body": "One email a month. Announcements, presale codes, nothing else."
   },
-
   "footer": {
     "brand": "OFF2",
     "address": "OFF2 Entertainment Inc.\nHarbour Event Centre, Vancouver BC",
