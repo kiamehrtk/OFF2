@@ -268,8 +268,24 @@
     try { fn(); } catch (e) { console.error('[off2] ' + name + ' failed:', e); }
   }
 
+  /* ---------- Starfield behind the scrolling content ----------
+     The pinned hero keeps the original .sky behind the carousel, but
+     .page-flow is opaque and scrolls over it, so the stars and meteors would
+     stop at the hero. Clone the node into the flow rather than repeating
+     several hundred lines of inline gradients in the markup. */
+  function initFlowSky() {
+    var sky = document.querySelector('.hero-stack .sky');
+    var flow = document.querySelector('.page-flow');
+    if (!sky || !flow || flow.querySelector('.sky--flow')) return;
+
+    var clone = sky.cloneNode(true);
+    clone.classList.add('sky--flow');
+    flow.insertBefore(clone, flow.firstChild);
+  }
+
   function init() {
     safe(initHero, 'initHero');
+    safe(initFlowSky, 'initFlowSky');
     safe(initReveal, 'initReveal');
     safe(initNav, 'initNav');
     safe(initFilterGroups, 'initFilterGroups');

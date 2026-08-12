@@ -144,6 +144,15 @@ button, input { font-family: inherit; }
 .sky {
   position: fixed; inset: -10%; z-index: 0; pointer-events: none; overflow: hidden;
 }
+/* The copy main.js clones into .page-flow. Sticky rather than fixed so it
+   stays inside the flow and never paints over the hero at the top of the
+   page; z-index -1 puts it above .page-flow's opaque background but behind
+   every section, which are all position: relative. The negative margin keeps
+   it out of the layout. */
+.sky--flow {
+  position: sticky; top: -10vh; left: 0; right: 0; bottom: auto;
+  height: 120vh; margin-bottom: -120vh; z-index: -1;
+}
 .sky__layer {
   position: absolute; left: 0; right: 0; top: -100%; height: 300%;
   animation: off2Twinkle 7s ease-in-out infinite, off2Float 46s ease-in-out infinite;
