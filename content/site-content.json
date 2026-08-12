@@ -10,7 +10,7 @@
       {
         "kicker": "Festival · Halloween Edition",
         "title": "Doomsnight",
-        "meta": "31 Oct · Harbour Event Centre",
+        "meta": "31 Oct · Pacific Coliseum",
         "image": "images/hero-doomsnight.jpg",
         "imageMobile": "images/festival-doomsnight.jpg",
         "imageCaption": "Doomsnight festival poster"
@@ -43,7 +43,7 @@
     {
       "name": "Doomsnight",
       "date": "31 Oct 2026",
-      "description": "The Halloween edition. Four stages, one long night.",
+      "description": "Alesso, Cosmic Gate and Timmy Trumpet at Pacific Coliseum, Vancouver.",
       "image": "images/festival-doomsnight.jpg",
       "mood": "#E0554A",
       "link": null
