@@ -65,12 +65,29 @@ button, input { font-family: inherit; }
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; }
 }
 
+/* Scroll reveal. Elements rise, sharpen and settle; main.js staggers
+   siblings so a row of cards arrives one after another rather than as a
+   single block. --reveal-delay is set per element by main.js. */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 1s cubic-bezier(.2, 0, .2, 1), transform 1s cubic-bezier(.2, 0, .2, 1);
+  transform: translate3d(0, 32px, 0) scale(.99);
+  filter: blur(5px);
+  transition:
+    opacity .85s cubic-bezier(.22, .61, .36, 1),
+    transform .85s cubic-bezier(.22, .61, .36, 1),
+    filter .85s cubic-bezier(.22, .61, .36, 1);
+  transition-delay: var(--reveal-delay, 0s);
 }
-[data-reveal].is-visible { opacity: 1; transform: none; }
+[data-reveal].is-visible { opacity: 1; transform: none; filter: none; }
+
+/* Motion is decoration here — with reduced motion everything is simply
+   present, with no transition to interrupt. */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal].is-visible {
+    opacity: 1; transform: none; filter: none; transition: none;
+  }
+}
 
 /* ---------- Nav ---------- */
 .nav {
@@ -169,6 +186,13 @@ section { position: relative; }
    contained image — up to ~45px of dead space at 16:10 — which detached the
    beam divider below from the bottom of the artwork. Matching the ratio means
    the image fills the box edge to edge and the beam sits flush against it. */
+/* ---------- Pinned hero (homepage) ----------
+   .hero-stack sticks to the top of the viewport and .page-flow, which is
+   opaque, scrolls up over it. The stack keeps the lower z-index so it is
+   covered rather than overlapping. */
+.hero-stack { position: sticky; top: 0; z-index: 1; }
+.page-flow { position: relative; z-index: 2; background: var(--bg); }
+
 .hero {
   position: relative; z-index: 2; aspect-ratio: 16 / 9; overflow: hidden; background: transparent;
 }

@@ -56,10 +56,31 @@
     var targets = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
     if (!targets.length) return;
 
-    if (!('IntersectionObserver' in window)) {
+    var reduceMotion = window.matchMedia
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function showAll() {
       targets.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      showAll();
       return;
     }
+
+    // Stagger siblings so a row of cards arrives in sequence. Capped so a
+    // long list never ends with an element waiting a noticeable beat.
+    targets.forEach(function (el) {
+      var parent = el.parentElement;
+      if (!parent) return;
+      var sibs = Array.prototype.filter.call(parent.children, function (c) {
+        return c.hasAttribute('data-reveal');
+      });
+      var i = sibs.indexOf(el);
+      if (i > 0) {
+        el.style.setProperty('--reveal-delay', Math.min(i * 0.07, 0.28) + 's');
+      }
+    });
 
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -68,15 +89,44 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -8% 0px' });
 
     targets.forEach(function (el) { io.observe(el); });
 
-    // Fallback: if something never intersects (e.g. hidden ancestor), reveal
-    // everything after 2s so content is never stuck invisible.
-    setTimeout(function () {
-      targets.forEach(function (el) { el.classList.add('is-visible'); });
-    }, 2000);
+    // Backstop. IntersectionObserver can stay silent in a document the
+    // browser never renders (a background or occluded tab), which would
+    // otherwise leave every section permanently invisible. This reveals
+    // whatever is on screen from geometry alone, so the page degrades to
+    // "content is simply there" rather than to a blank column. Scoped to
+    // the viewport, so sections further down still animate on arrival.
+    var pending = false;
+    function revealInView() {
+      pending = false;
+      var remaining = targets.filter(function (el) {
+        return !el.classList.contains('is-visible');
+      });
+      if (!remaining.length) {
+        window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', onScroll);
+        return;
+      }
+      remaining.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+          el.classList.add('is-visible');
+          io.unobserve(el);
+        }
+      });
+    }
+    function onScroll() {
+      if (pending) return;
+      pending = true;
+      window.requestAnimationFrame(revealInView);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    setTimeout(revealInView, 2500);
   }
 
   /* ---------- Mobile nav toggle ---------- */

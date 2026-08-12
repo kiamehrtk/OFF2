@@ -30,6 +30,14 @@
     </button>
   </nav>
 
+  <!--
+    Pinned backdrop: the starfield, the hero carousel and the beam under it
+    stay stuck to the top of the viewport while .page-flow scrolls up over
+    them. Everything in .page-flow is opaque so the hero is covered, not
+    seen through.
+  -->
+  <div class="hero-stack">
+
   <!-- ============ SKY / STARFIELD BACKGROUND ============ -->
   <div class="sky" aria-hidden="true">
     <div class="sky__layer" style="animation: off2Twinkle 7s ease-in-out infinite, off2Float 46s ease-in-out infinite; background-image: radial-gradient(circle 1.1px at 59.71% 29.93%, rgba(201,214,224,0.42) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 98.71% 67.22%, rgba(201,214,224,0.42) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 86.99% 91.53%, rgba(201,214,224,0.30) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 99.74% 20.96%, rgba(201,214,224,0.33) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 99.28% 5.90%, rgba(201,214,224,0.38) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 3.03% 7.20%, rgba(201,214,224,0.46) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 92.40% 80.96%, rgba(201,214,224,0.48) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 6.37% 61.81%, rgba(201,214,224,0.41) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 20.39% 89.23%, rgba(201,214,224,0.29) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 80.27% 14.63%, rgba(201,214,224,0.28) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 71.65% 73.88%, rgba(201,214,224,0.51) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 81.76% 83.59%, rgba(201,214,224,0.48) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 3.62% 33.90%, rgba(201,214,224,0.32) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 65.89% 38.31%, rgba(201,214,224,0.36) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 79.02% 31.29%, rgba(201,214,224,0.52) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 55.81% 20.06%, rgba(201,214,224,0.40) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 57.41% 41.51%, rgba(201,214,224,0.36) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 84.03% 60.08%, rgba(201,214,224,0.37) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 71.74% 58.69%, rgba(201,214,224,0.38) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 57.37% 23.74%, rgba(201,214,224,0.30) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 59.13% 52.51%, rgba(201,214,224,0.40) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 29.50% 45.19%, rgba(201,214,224,0.30) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 77.12% 20.24%, rgba(201,214,224,0.31) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 85.02% 60.39%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 93.22% 24.87%, rgba(201,214,224,0.41) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 39.35% 63.16%, rgba(201,214,224,0.46) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 23.16% 19.20%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 0.04% 28.32%, rgba(201,214,224,0.49) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 76.63% 43.21%, rgba(201,214,224,0.38) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 50.93% 25.39%, rgba(201,214,224,0.36) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 84.35% 28.27%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 5.89% 87.57%, rgba(201,214,224,0.46) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 44.85% 17.42%, rgba(201,214,224,0.50) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 28.82% 22.14%, rgba(201,214,224,0.40) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 77.48% 36.40%, rgba(201,214,224,0.28) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 42.11% 10.83%, rgba(201,214,224,0.55) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 27.77% 57.60%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 89.87% 72.11%, rgba(201,214,224,0.54) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 25.67% 22.68%, rgba(201,214,224,0.41) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 39.43% 78.62%, rgba(201,214,224,0.41) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 94.40% 77.88%, rgba(201,214,224,0.41) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 91.51% 38.96%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 88.86% 46.23%, rgba(201,214,224,0.37) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 74.41% 89.86%, rgba(201,214,224,0.52) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 18.04% 24.59%, rgba(201,214,224,0.37) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 4.93% 13.62%, rgba(201,214,224,0.46) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 81.55% 23.55%, rgba(201,214,224,0.43) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 28.54% 18.56%, rgba(201,214,224,0.44) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 64.28% 91.73%, rgba(201,214,224,0.53) 0%, rgba(201,214,224,0) 100%), radial-gradient(circle 1.1px at 24.51% 68.12%, rgba(201,214,224,0.31) 0%, rgba(201,214,224,0) 100%);"></div>
@@ -92,6 +100,10 @@
   </section>
 
   <div class="hr-beam" aria-hidden="true"></div>
+
+  </div><!-- /.hero-stack -->
+
+  <div class="page-flow">
 
   <!-- ============ INTRO / MISSION ============ -->
   <section class="intro">
@@ -292,6 +304,8 @@
       </div>
     </div>
   </footer>
+
+  </div><!-- /.page-flow -->
 
 </div>
 <script src="js/main.js"></script>
