@@ -31,10 +31,10 @@
   </nav>
 
   <!--
-    Pinned backdrop: the starfield, the hero carousel and the beam under it
-    stay stuck to the top of the viewport while .page-flow scrolls up over
-    them. Everything in .page-flow is opaque so the hero is covered, not
-    seen through.
+    Pinned backdrop: the starfield and the hero carousel stay stuck to the
+    top of the viewport while .page-flow scrolls up over them. Everything in
+    .page-flow is opaque so the hero is covered, not seen through. The beam
+    sits at the top of .page-flow, so it rides up with the content.
   -->
   <div class="hero-stack">
 
@@ -99,11 +99,12 @@
     </div>
   </section>
 
-  <div class="hr-beam" aria-hidden="true"></div>
-
   </div><!-- /.hero-stack -->
 
   <div class="page-flow">
+
+  <!-- Leads the edge of the scrolling content up over the pinned hero. -->
+  <div class="hr-beam" aria-hidden="true"></div>
 
   <!-- ============ INTRO / MISSION ============ -->
   <section class="intro">
