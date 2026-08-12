@@ -18,7 +18,7 @@
       {
         "kicker": "Festival · Sunrise Series",
         "title": "Soul Rise",
-        "meta": "06 Jun · Cascade Valley",
+        "meta": "29 Aug · Ambleside Park",
         "image": "images/hero-soulrise.jpg",
         "imageMobile": "images/festival-soulrise.jpg",
         "imageCaption": "Soul Rise festival poster"
@@ -50,8 +50,8 @@
     },
     {
       "name": "Soul Rise",
-      "date": "06 Jun 2026",
-      "description": "A sunrise set in Cascade Valley. House and soul.",
+      "date": "29 Aug 2026",
+      "description": "Anyma presents ÆDEN, Argy and Kevin de Vries at Ambleside Park.",
       "image": "images/festival-soulrise.jpg",
       "mood": "#9FB4C7",
       "link": null
