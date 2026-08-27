@@ -1,54 +1,62 @@
 #!/usr/bin/env python3
 """Regenerate the .sky__layer inline gradients across the site.
 
-Denser field, icy-blue/white palette, stronger glow. Seeded so a re-run
-produces the same sky and the diff stays stable.
+Icy-blue/white starfield. Seeded so a re-run produces the same sky and the
+diff stays stable.
+
+Performance note: the glow is baked into each gradient's colour stops — a
+bright core, a mid halo, then falloff — rather than applied with
+filter: drop-shadow(). The filter version cost a full offscreen blur pass
+per layer per frame, and these layers animate continuously, which made the
+page crawl. Keep it that way: no `filter` on a layer that animates.
 """
 import glob
 import random
 import re
 
-# name, count, size px, rgb, alpha range, animation, filter
+# name, count, radius px, core rgb, halo rgb, alpha range, animation
 LAYERS = [
     (
-        "fine", 118, 1.1, (214, 238, 255), (0.30, 0.62),
+        "fine", 118, 3.2, (226, 244, 255), (150, 214, 255), (0.34, 0.66),
         "off2Twinkle 7s ease-in-out infinite, off2Float 46s ease-in-out infinite",
-        "drop-shadow(0 0 3px rgba(170,220,255,0.55))",
     ),
     (
-        "mid", 44, 1.9, (140, 212, 255), (0.45, 0.85),
+        "mid", 44, 5.5, (236, 249, 255), (126, 200, 245), (0.50, 0.88),
         "off2Twinkle 5.2s ease-in-out infinite reverse, off2Float 34s ease-in-out infinite",
-        "blur(0.3px) drop-shadow(0 0 7px rgba(126,200,245,0.9))",
     ),
     (
-        "bright", 26, 3.4, (255, 255, 255), (0.62, 1.0),
+        "bright", 26, 10, (255, 255, 255), (126, 200, 245), (0.70, 1.0),
         "off2Twinkle 3.6s ease-in-out infinite, off2Float 26s ease-in-out infinite",
-        "blur(0.6px) drop-shadow(0 0 12px rgba(255,255,255,0.95)) "
-        "drop-shadow(0 0 30px rgba(126,200,245,0.8))",
     ),
     (
-        "bokeh", 10, 7, (176, 224, 255), (0.28, 0.55),
+        "bokeh", 10, 16, (198, 232, 255), (140, 205, 250), (0.16, 0.32),
         "off2Float 20s ease-in-out infinite",
-        "blur(4px)",
     ),
 ]
 
 
-def build_layer(rng, count, size, rgb, arange, animation, filt):
-    r, g, b = rgb
+def build_layer(rng, count, radius, core, halo, arange, animation):
+    cr, cg, cb = core
+    hr, hg, hb = halo
     stops = []
     for _ in range(count):
         x, y = rng.uniform(0, 100), rng.uniform(0, 100)
         a = rng.uniform(*arange)
+        # Core -> halo -> transparent. The tight first stop keeps the star a
+        # point; the wide tail is the glow.
         stops.append(
             "radial-gradient(circle %gpx at %.2f%% %.2f%%, "
-            "rgba(%d,%d,%d,%.2f) 0%%, rgba(%d,%d,%d,0) 100%%)"
-            % (size, x, y, r, g, b, a, r, g, b)
+            "rgba(%d,%d,%d,%.2f) 0%%, "
+            "rgba(%d,%d,%d,%.2f) 18%%, "
+            "rgba(%d,%d,%d,%.2f) 42%%, "
+            "rgba(%d,%d,%d,0) 100%%)"
+            % (radius, x, y,
+               cr, cg, cb, a,
+               cr, cg, cb, a * 0.55,
+               hr, hg, hb, a * 0.22,
+               hr, hg, hb)
         )
-    style = "animation: %s;" % animation
-    if filt:
-        style += " filter: %s;" % filt
-    style += " background-image: %s;" % ", ".join(stops)
+    style = "animation: %s; background-image: %s;" % (animation, ", ".join(stops))
     return '    <div class="sky__layer" style="%s"></div>' % style
 
 
@@ -58,15 +66,12 @@ def main():
         src = open(path, encoding="utf-8").read()
         if '<div class="sky__layer"' not in src:
             continue
-        # Seeded per file so every page gets its own sky, reproducibly.
         rng = random.Random(hash(path) & 0xFFFF)
         blocks = [build_layer(rng, *cfg[1:]) for cfg in LAYERS]
-        found = pattern.findall(src)
-        if len(found) != len(LAYERS):
-            print("  %-16s SKIP — found %d layers, expected %d"
-                  % (path, len(found), len(LAYERS)))
+        if len(pattern.findall(src)) != len(LAYERS):
+            print("  %-16s SKIP — layer count mismatch" % path)
             continue
-        out, i = [], 0
+        i = 0
 
         def sub(_m):
             nonlocal i
@@ -76,8 +81,7 @@ def main():
 
         src = pattern.sub(sub, src)
         open(path, "w", encoding="utf-8").write(src)
-        total = sum(cfg[1] for cfg in LAYERS)
-        print("  %-16s %d layers, %d stars" % (path, len(LAYERS), total))
+        print("  %-16s %d stars, no filters" % (path, sum(c[1] for c in LAYERS)))
 
 
 if __name__ == "__main__":

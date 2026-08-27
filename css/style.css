@@ -153,12 +153,15 @@ button, input { font-family: inherit; }
   position: sticky; top: -10vh; left: 0; right: 0; bottom: auto;
   height: 120vh; margin-bottom: -120vh; z-index: -1;
 }
+/* 300% tall was ~30x the viewport per layer, and with eight layers animating
+   that is a lot of pixels to repaint every frame. off2Float only travels
+   ~2%, so 140% is all the headroom the drift needs. */
 .sky__layer {
-  position: absolute; left: 0; right: 0; top: -100%; height: 300%;
+  position: absolute; left: 0; right: 0; top: -6%; height: 112%;
   animation: off2Twinkle 7s ease-in-out infinite, off2Float 46s ease-in-out infinite;
   will-change: transform;
 }
-.meteor-field { position: absolute; left: 0; right: 0; top: -100%; height: 300%; overflow: hidden; will-change: translate; }
+.meteor-field { position: absolute; left: 0; right: 0; top: -20%; height: 140%; overflow: hidden; will-change: translate; }
 .meteor {
   position: absolute; width: 160px; height: 1.5px; border-radius: 2px; transform-origin: 100% 50%;
   background: linear-gradient(270deg, rgba(255,255,255,.9) 0%, rgba(126,200,245,.5) 26%, rgba(126,200,245,0) 100%);
