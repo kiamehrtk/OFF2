@@ -603,6 +603,60 @@ section { position: relative; }
 }
 .culture-item p { margin: 0; font-size: 16px; line-height: 1.75; color: var(--text-dim); text-wrap: pretty; }
 
+/* ---------- Demo submission form (label.html) ----------
+   Stacked variant of the .newsletter-form treatment: same border, focus
+   colour and button, laid out vertically with labels. */
+.demo-form { max-width: 560px; margin: 0 auto; }
+.demo-form__field { margin-bottom: 22px; }
+.demo-form__field label {
+  display: block; font-family: var(--font-display); font-size: 13px;
+  letter-spacing: .24em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 10px;
+}
+.demo-form__field label span {
+  letter-spacing: .12em; color: var(--text-dimmer); text-transform: none;
+}
+.demo-form input,
+.demo-form textarea {
+  width: 100%; box-sizing: border-box; padding: 14px 16px;
+  background: rgba(255, 255, 255, .03); border: 1px solid var(--border-strong);
+  color: var(--white); font-family: var(--font-body); font-size: 15px;
+  transition: border-color .3s ease;
+}
+.demo-form textarea { resize: vertical; min-height: 110px; }
+.demo-form input:focus,
+.demo-form textarea:focus { outline: none; border-color: var(--accent); }
+.demo-form input:disabled,
+.demo-form textarea:disabled { opacity: .45; cursor: not-allowed; }
+.demo-form input[aria-invalid="true"],
+.demo-form textarea[aria-invalid="true"] { border-color: #E0554A; }
+
+.demo-form__help,
+.demo-form__legal {
+  font-size: 13px; line-height: 1.65; color: var(--text-dimmer); margin: 10px 0 0;
+}
+.demo-form__legal { margin-top: 26px; }
+
+/* Shown while the endpoint is not configured. */
+.demo-form__notice {
+  margin: 0 0 30px; padding: 14px 16px; font-size: 14px; line-height: 1.6;
+  color: var(--accent); border: 1px solid var(--border-strong);
+  background: rgba(126, 200, 245, .06);
+}
+
+.demo-form__status { margin: 18px 0 0; font-size: 14px; line-height: 1.6; }
+.demo-form__status.is-error { color: #E0554A; }
+.demo-form__status.is-success { color: var(--accent); }
+
+.demo-form .btn-book { width: 100%; text-align: center; }
+.demo-form .btn-book:disabled { opacity: .45; cursor: not-allowed; }
+
+/* Off-screen rather than display:none — bots skip hidden inputs. */
+.demo-form__trap {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
 /* Job listing rows. Kept as a flat list (not cards) so a long roster stays
    scannable; the whole row is the link target. */
 .job-list { border-top: 1px solid var(--border-soft); }

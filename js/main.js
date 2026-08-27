@@ -264,6 +264,108 @@
     });
   }
 
+  /* ---------- Demo submission form (label.html) ----------
+     Posts to a form service (Formspree or equivalent) whose endpoint lives in
+     the form's data-endpoint attribute. With no endpoint the form stays inert
+     and disabled: a submission that goes nowhere must never show a success
+     message. That is exactly the bug in initNewsletter above, and a producer
+     who thinks their demo arrived when it did not is worse served than one who
+     sees an honest error. */
+  function initLabelForm() {
+    var form = document.getElementById('demo-form');
+    if (!form) return;
+
+    var endpoint = (form.getAttribute('data-endpoint') || '').trim();
+    var status = document.getElementById('demo-status');
+    var button = form.querySelector('button[type="submit"]');
+    var trap = form.querySelector('input[name="_gotcha"]');
+
+    function say(message, kind) {
+      if (!status) return;
+      status.textContent = message;
+      status.className = 'demo-form__status' + (kind ? ' is-' + kind : '');
+    }
+
+    // Not configured yet — leave every control disabled and do nothing.
+    if (!endpoint) return;
+
+    var fields = Array.prototype.slice.call(
+      form.querySelectorAll('input, textarea')
+    ).filter(function (el) { return el.name !== '_gotcha'; });
+    fields.forEach(function (el) { el.disabled = false; });
+    if (button) {
+      button.disabled = false;
+      button.textContent = 'Send demo';
+    }
+    var notice = form.querySelector('.demo-form__notice');
+    if (notice && notice.parentNode) notice.parentNode.removeChild(notice);
+
+    function invalid(el, message) {
+      el.setAttribute('aria-invalid', 'true');
+      say(message, 'error');
+      el.focus();
+      return false;
+    }
+
+    function validate() {
+      fields.forEach(function (el) { el.removeAttribute('aria-invalid'); });
+
+      var artist = form.querySelector('#demo-artist');
+      var email = form.querySelector('#demo-email');
+      var track = form.querySelector('#demo-title');
+      var link = form.querySelector('#demo-link');
+
+      if (!artist.value.trim()) return invalid(artist, 'Add your artist name.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        return invalid(email, 'That email address does not look right.');
+      }
+      if (!track.value.trim()) return invalid(track, 'Add the track title.');
+
+      var url = link.value.trim();
+      if (!url) return invalid(link, 'Add a link to the track.');
+      if (!/^https?:\/\//i.test(url)) {
+        return invalid(link, 'The link needs to start with http:// or https://');
+      }
+      return true;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Spam trap: people never see this field, so a filled one is a bot.
+      // Show the normal success state rather than tipping it off.
+      if (trap && trap.value) {
+        form.innerHTML = '<p class="demo-form__status is-success">Thanks — we have your demo.</p>';
+        return;
+      }
+
+      if (!validate()) return;
+
+      var original = button ? button.textContent : '';
+      if (button) { button.disabled = true; button.textContent = 'Sending…'; }
+      say('', '');
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        var track = form.querySelector('#demo-title').value.trim();
+        form.innerHTML =
+          '<p class="demo-form__status is-success">Thanks — we have &ldquo;' +
+          track.replace(/[<>&"]/g, '') +
+          '&rdquo;. We listen to everything, and you will hear back only if it is a fit. ' +
+          'Allow four weeks.</p>';
+      }).catch(function () {
+        // Be honest and give them another route out.
+        if (button) { button.disabled = false; button.textContent = original; }
+        say('That did not send — something went wrong at our end. ' +
+            'Please try again, or email us the link directly.', 'error');
+      });
+    });
+  }
+
   function safe(fn, name) {
     try { fn(); } catch (e) { console.error('[off2] ' + name + ' failed:', e); }
   }
@@ -291,6 +393,7 @@
     safe(initFilterGroups, 'initFilterGroups');
     safe(initLightbox, 'initLightbox');
     safe(initNewsletter, 'initNewsletter');
+    safe(initLabelForm, 'initLabelForm');
   }
 
   if (document.readyState === 'loading') {

@@ -374,5 +374,27 @@
     "brand": "OFF2",
     "address": "OFF2 Entertainment Inc.\nHarbour Event Centre, Vancouver BC",
     "copyright": "© 2026 OFF2 Entertainment Inc."
+  },
+  "_labelNote": "label.html — demo submissions. The form posts to the endpoint in #demo-form's data-endpoint attribute; while that is empty the form stays disabled and the page is deliberately unlinked from the nav.",
+  "label": {
+    "heading": "We sign records we'd play at our own shows.",
+    "intro": "OFF2 Label is the record arm of OFF2 Entertainment. Same crew, same rooms — demos go to the people who book the floors, not an inbox nobody opens.",
+    "pillars": [
+      {
+        "label": "The sound",
+        "body": "House, techno, melodic and bass. If it works at Harbour at 1am it works here — we care whether a record moves a room, not which subgenre it belongs to."
+      },
+      {
+        "label": "The standard",
+        "body": "Finished or near-finished, mixed, ideally mastered. We can hear past a rough master. We can't hear past a track that isn't built yet."
+      },
+      {
+        "label": "Before you send",
+        "body": "No bootlegs, no uncleared samples, nothing already signed. One track is enough — send your best, not your catalogue."
+      }
+    ],
+    "smallprint": "We listen to everything. You'll hear back only if it's a fit — allow four weeks. Submissions are treated as non-confidential and create no obligation to sign or release; you keep all rights to your music. We use your name and email only to reply to this submission.",
+    "formEndpoint": null,
+    "turnaroundWeeks": 4
   }
 }
