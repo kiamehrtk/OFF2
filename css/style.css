@@ -555,7 +555,12 @@ section { position: relative; }
   transition: border-color .4s ease, transform .5s cubic-bezier(.2, 0, .2, 1);
 }
 .venue-gallery__item:hover { border-color: var(--accent); transform: translateY(-4px); }
-.venue-gallery__item img { transition: transform .8s cubic-bezier(.2, 0, .2, 1); }
+/* 4:3 tiles holding 3:2 photos — fill and crop. The generic .img-slot img
+   rule uses contain, which would letterbox them. */
+.venue-gallery__item img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .8s cubic-bezier(.2, 0, .2, 1);
+}
 .venue-gallery__item:hover img { transform: scale(1.04); }
 @media (max-width: 860px) {
   .venue-gallery {
