@@ -261,15 +261,15 @@ section { position: relative; }
      further down sets object-fit:contain at the same specificity and would
      otherwise win on source order. */
   .hero__media .img-slot img { object-fit: cover; }
-  .hero__controls { left: 24px; right: 24px; bottom: 18px; gap: 16px; }
-  /* The portrait poster runs artwork and text to its own bottom edge, so
-     overlaid controls land on the venue/ticket lines. A scrim behind them
-     separates chrome from artwork instead of the two competing. */
-  .hero__controls::before {
-    content: ''; position: absolute; left: -24px; right: -24px; top: -22px; bottom: -18px;
-    background: linear-gradient(180deg, rgba(0,2,5,0), rgba(0,2,5,.82) 55%);
-    pointer-events: none; z-index: -1;
-  }
+  /* The portrait poster carries its own venue/ticket lines at the bottom, and
+     the carousel controls were sitting straight on top of them — two sets of
+     text in the same place. Give the hero a little extra height and stop the
+     artwork short of it, so the controls get their own strip underneath
+     instead of competing with the poster. Ratio rather than a vw calc so the
+     band scales with the screen. */
+  .hero { aspect-ratio: 300 / 444; }
+  .hero__media { bottom: 56px; }
+  .hero__controls { left: var(--gutter); right: var(--gutter); bottom: 14px; gap: 16px; }
   .hero__dot { width: 32px; }
   .hero__arrow { width: 40px; height: 40px; }
   .hero__nav { gap: 16px; }
@@ -809,6 +809,17 @@ section { position: relative; }
   .footer-col a { display: inline-block; padding: 9px 0; }
   .link-more { display: inline-block; padding: 6px 0 10px; }
   .footer-bottom { gap: 14px; }
+
+  /* .section-head is a nowrap flex row, and .link-more carries
+     white-space: nowrap, so on a narrow screen the link cannot shrink or
+     wrap — it pushed straight through the right edge and dragged the layout
+     wider than the viewport. body{overflow-x:hidden} hid the scrollbar but
+     not the drift: the layout viewport still stretched, so the whole page
+     slid sideways while scrolling. Let the row wrap instead. */
+  .section-head { flex-wrap: wrap; align-items: flex-start; gap: 18px; margin-bottom: 34px; }
+  .section-head h2 { font-size: 38px; }
+  .section-head > div { min-width: 0; }
+  .section-head__note { max-width: none; }
 
   .venue-location__map { padding: 12px 0 8px; }
 
