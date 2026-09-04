@@ -783,3 +783,51 @@ section { position: relative; }
   .lightbox { padding: 20px; }
   .lightbox__close { top: -44px; }
 }
+
+/* ==========================================================================
+   Mobile pass
+   The layout already collapses to one column at each component's own
+   breakpoint; what was missing was the page frame. --gutter stayed 48px at
+   every width, so a 375px phone spent 96px — a quarter of the screen — on
+   side padding, and the desktop vertical rhythm (130px between sections)
+   left long dead gaps between short blocks.
+   ========================================================================== */
+@media (max-width: 720px) {
+  :root { --gutter: 24px; }
+
+  /* Desktop section rhythm is built for wide columns; on a narrow screen the
+     same values read as empty space rather than breathing room. */
+  .section { padding: 84px var(--gutter); }
+  .newsletter { padding: 84px var(--gutter); }
+  .site-footer { padding: 56px var(--gutter) 36px; }
+  .footer-grid { gap: 34px; padding-bottom: 40px; }
+
+  /* Touch targets. These are 22-30px tall on desktop, which is fine for a
+     cursor and too small for a thumb — roughly 40px is the practical floor.
+     Scoped to mobile so the desktop footer's spacing is untouched. */
+  .footer-col { gap: 4px; }
+  .footer-col a { display: inline-block; padding: 9px 0; }
+  .link-more { display: inline-block; padding: 6px 0 10px; }
+  .footer-bottom { gap: 14px; }
+
+  .venue-location__map { padding: 12px 0 8px; }
+
+  /* iOS Safari zooms the whole page when a focused input's text is under
+     16px. The newsletter field is already 16px; match it here so tapping a
+     demo field does not jerk the layout. */
+  .demo-form input,
+  .demo-form textarea { font-size: 16px; }
+
+  /* Long uppercase headings with wide tracking are the most likely thing to
+     force a horizontal scrollbar at 320px. */
+  h1, h2 { overflow-wrap: break-word; }
+}
+
+/* Small phones (iPhone SE and similar). */
+@media (max-width: 380px) {
+  :root { --gutter: 18px; }
+  .section { padding: 68px var(--gutter); }
+  .newsletter { padding: 68px var(--gutter); }
+  .eyebrow { font-size: 13px; letter-spacing: .28em; }
+  .footer-col, .footer-bottom { letter-spacing: .16em; }
+}
