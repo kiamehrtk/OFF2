@@ -19,6 +19,9 @@ jobs:
           TIXR_GROUP_HARBOUR: '2543'
           TIXR_CPK_HARBOUR: ${{ secrets.TIXR_CPK_HARBOUR }}
           TIXR_SECRET_HARBOUR: ${{ secrets.TIXR_SECRET_HARBOUR }}
+          TIXR_GROUP_LIVE: '3091'
+          TIXR_CPK_LIVE: ${{ secrets.TIXR_CPK_LIVE }}
+          TIXR_SECRET_LIVE: ${{ secrets.TIXR_SECRET_LIVE }}
         run: python3 tools/sync-events.py
 
       - name: Commit if anything changed

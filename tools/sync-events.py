@@ -28,6 +28,14 @@ END = "<!-- AUTO:harbour-events end -->"
 RAIL_LIMIT = 6           # homepage rail; the events page shows everything
 VENUE = "Harbour Event Centre"
 
+# A Tixr group is a sales channel, not a venue: the OFF2 Live group sells
+# Harbour shows too (Emo Orchestra, 5 Dec). So pull every group that can
+# contain a Harbour date and bucket by the event's own venue name.
+# HALO is deliberately absent — it reports itself as a separate venue and
+# is not listed on this site.
+SOURCE_GROUPS = ["HARBOUR", "LIVE"]
+VENUE_MATCH = "harbour"
+
 
 def upcoming_music(events):
     """PUBLISHED music events that have not happened yet, soonest first.
@@ -122,15 +130,26 @@ def splice(path, markup):
 
 def main():
     check = "--check" in sys.argv
-    gid, cpk, secret = tixr.credentials("HARBOUR")
-    events = upcoming_music(tixr.fetch_events(gid, cpk, secret))
+    raw, seen = [], set()
+    for group in SOURCE_GROUPS:
+        gid, cpk, secret = tixr.credentials(group)
+        for event in tixr.fetch_events(gid, cpk, secret):
+            venue = (event.get("venue") or {}).get("name") or ""
+            if VENUE_MATCH not in venue.lower():
+                continue          # e.g. a Tradex or Halo date sold by this group
+            if event["id"] in seen:
+                continue          # same show listed under two groups
+            seen.add(event["id"])
+            raw.append(event)
+    events = upcoming_music(raw)
 
     # Never blank the listings because of a bad response.
     if not events:
         raise SystemExit("ERROR: Tixr returned no upcoming music events. "
                          "Refusing to write empty listings; site left as-is.")
 
-    print("%d upcoming music events at Harbour" % len(events))
+    print("%d upcoming music events at Harbour (groups: %s)"
+          % (len(events), ", ".join(SOURCE_GROUPS)))
     for e in events[:RAIL_LIMIT]:
         print("  %-15s %s" % (time.strftime("%a %d %b", time.localtime(e["start_date"] / 1000)),
                               e["name"][:50]))
@@ -145,7 +164,7 @@ def main():
     splice("index.html", "".join(card(r, rail=True) for r in rows[:RAIL_LIMIT]))
 
     snapshot = os.path.join(ROOT, "content", "events-harbour.json")
-    json.dump({"venue": VENUE, "source": "Tixr group %s" % gid,
+    json.dump({"venue": VENUE, "source": "Tixr groups " + ", ".join(SOURCE_GROUPS),
                "generated": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
                "events": rows}, open(snapshot, "w", encoding="utf-8"),
               indent=2, ensure_ascii=False)

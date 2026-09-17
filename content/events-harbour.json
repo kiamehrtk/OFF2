@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
-  "source": "Tixr group 2543",
-  "generated": "2026-09-17T14:44:12-0700",
+  "source": "Tixr groups HARBOUR, LIVE",
+  "generated": "2026-09-17T15:01:56-0700",
   "events": [
     {
       "id": 195028,
@@ -132,6 +132,16 @@
       "link": "https://tixr.com/e/204102",
       "image": "images/events/tixr-204102.jpg",
       "startsAt": 1795845600000
+    },
+    {
+      "id": 207235,
+      "name": "Emo Orchestra with The Spill Canvas - An Evening of Emo",
+      "date": "Sat 05 Dec",
+      "doors": "Doors 17:00",
+      "age": "19+",
+      "link": "https://tixr.com/e/207235",
+      "image": "images/events/tixr-207235.jpg",
+      "startsAt": 1796518800000
     },
     {
       "id": 202363,
