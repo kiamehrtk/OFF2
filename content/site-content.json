@@ -54,7 +54,7 @@
       "description": "Anyma presents ÆDEN, Argy and Kevin de Vries at Ambleside Park.",
       "image": "images/festival-soulrise.jpg",
       "mood": "#9FB4C7",
-      "link": null
+      "link": "https://tixr.com/e/192434"
     },
     {
       "name": "Lost in Dreams",
@@ -62,7 +62,15 @@
       "description": "ILLENIUM, Dabin and Elephante at Tradex, Abbotsford.",
       "image": "images/festival-lostindreams.jpg",
       "mood": "#3CE0A8",
-      "link": null
+      "link": "https://tixr.com/e/165356"
+    },
+    {
+      "name": "Dreamstate Vancouver",
+      "date": "28 Nov 2026",
+      "description": "Tiësto, Dash Berlin and Darude at Tradex, Abbotsford.",
+      "image": "images/festival-dreamstate.jpg",
+      "mood": "#E8AEC8",
+      "link": "https://tixr.com/e/206344"
     }
   ],
   "_eventsNote": "Backs both the homepage teaser rail (#events in index.html) and the full events.html grid. `venue` drives events.html's filter tabs (data-venue-filter) — every real event so far is 'harbour'; the 'tradex' tab has no entries yet so events.html shows its empty state (data-venue-empty) for that filter rather than fabricated shows. `description` is only used on events.html (the homepage rail has no room for it).",
