@@ -28,15 +28,35 @@ IMG_DIR = os.path.join(ROOT, "images", "events")
 START = "<!-- AUTO:harbour-events start"
 END = "<!-- AUTO:harbour-events end -->"
 RAIL_LIMIT = 6           # homepage rail; the events page shows everything
-VENUE = "Harbour Event Centre"
 
 # A Tixr group is a sales channel, not a venue: the OFF2 Live group sells
 # Harbour shows too (Emo Orchestra, 5 Dec). So pull every group that can
 # contain a Harbour date and bucket by the event's own venue name.
 # HALO is deliberately absent — it reports itself as a separate venue and
 # is not listed on this site.
-SOURCE_GROUPS = ["HARBOUR", "LIVE"]
-VENUE_MATCH = "harbour"
+SOURCE_GROUPS = ["HARBOUR", "LIVE", "HALO"]
+
+# Harbour is one building with several rooms. Tixr names the main room and
+# Blueprint after the venue, but Halo only as "Halo", so matching on the word
+# "harbour" alone silently dropped every Halo date. Rooms are listed together
+# under the Harbour filter and labelled individually on the card.
+VENUE = "Harbour Event Centre"
+ROOM_VENUES = {"halo": "Halo"}   # venue names that are Harbour rooms
+
+
+def is_harbour(event):
+    name = ((event.get("venue") or {}).get("name") or "").strip().lower()
+    return "harbour" in name or name in ROOM_VENUES
+
+
+def venue_label(event):
+    """'Harbour Event Centre', or '… · Blueprint' / '… · Halo' for a room."""
+    raw = ((event.get("venue") or {}).get("name") or "").strip()
+    room = ROOM_VENUES.get(raw.lower())
+    if not room:
+        bracket = re.search(r"\(([^)]+)\)", raw)
+        room = bracket.group(1).strip() if bracket else None
+    return "%s · %s" % (VENUE, room) if room else VENUE
 
 
 def upcoming_music(events):
@@ -106,6 +126,7 @@ def normalise(event):
         "date": t.strftime("%a %d %b"),
         "doors": t.strftime("Doors %H:%M"),
         "age": ("%d+" % age) if age else "All ages",
+        "venue": venue_label(event),
         "link": event.get("short_url") or event.get("url"),
         "image": poster(event),
         "startsAt": event["start_date"],
@@ -116,9 +137,9 @@ def card(ev, rail):
     """Mirror the existing hand-written card markup exactly."""
     e = lambda s: html.escape(s, quote=True)
     media = ('<div class="img-slot is-filled"><img src="%s" alt="%s — %s, %s" loading="lazy"></div>'
-             % (e(ev["image"]), e(ev["name"]), e(VENUE), e(ev["date"]))) if ev["image"] else \
+             % (e(ev["image"]), e(ev["name"]), e(ev["venue"]), e(ev["date"]))) if ev["image"] else \
             ('<div class="img-slot"><span>%s</span></div>' % e(ev["name"]))
-    venue_line = "" if rail else '\n              <div class="card__venue">%s</div>' % e(VENUE)
+    venue_line = "" if rail else '\n              <div class="card__venue">%s</div>' % e(ev["venue"])
     inner = (
         '<a href="%s" class="card" target="_blank" rel="noopener noreferrer">\n'
         '            <div class="card__media">%s</div>\n'
@@ -153,9 +174,8 @@ def main():
     for group in SOURCE_GROUPS:
         gid, cpk, secret = tixr.credentials(group)
         for event in tixr.fetch_events(gid, cpk, secret):
-            venue = (event.get("venue") or {}).get("name") or ""
-            if VENUE_MATCH not in venue.lower():
-                continue          # e.g. a Tradex or Halo date sold by this group
+            if not is_harbour(event):
+                continue          # e.g. a Tradex date sold by this group
             if event["id"] in seen:
                 continue          # same show listed under two groups
             seen.add(event["id"])
