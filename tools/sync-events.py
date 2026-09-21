@@ -11,6 +11,8 @@ Run:  python3 tools/sync-events.py          (writes)
 """
 import html
 import json
+from datetime import datetime
+from zoneinfo import ZoneInfo
 import os
 import re
 import subprocess
@@ -78,14 +80,31 @@ def poster(event):
         return None
 
 
+# Tixr timestamps are epoch ms, so they carry no timezone. Formatting them
+# with the machine's local clock gave the right answer on a Vancouver laptop
+# and the wrong one on the UTC CI runner, where a 22:00 show rolled over into
+# 05:00 the next day. Always format in the venue's own timezone, which Tixr
+# supplies per event.
+DEFAULT_TZ = "America/Vancouver"
+
+
+def local_time(event):
+    name = (event.get("venue") or {}).get("timezone") or DEFAULT_TZ
+    try:
+        tz = ZoneInfo(name)
+    except Exception:
+        tz = ZoneInfo(DEFAULT_TZ)
+    return datetime.fromtimestamp(event["start_date"] / 1000, tz)
+
+
 def normalise(event):
-    t = time.localtime(event["start_date"] / 1000)
+    t = local_time(event)
     age = event.get("age_restriction")
     return {
         "id": event["id"],
         "name": event["name"].strip(),
-        "date": time.strftime("%a %d %b", t),
-        "doors": time.strftime("Doors %H:%M", t),
+        "date": t.strftime("%a %d %b"),
+        "doors": t.strftime("Doors %H:%M"),
         "age": ("%d+" % age) if age else "All ages",
         "link": event.get("short_url") or event.get("url"),
         "image": poster(event),
@@ -151,8 +170,7 @@ def main():
     print("%d upcoming music events at Harbour (groups: %s)"
           % (len(events), ", ".join(SOURCE_GROUPS)))
     for e in events[:RAIL_LIMIT]:
-        print("  %-15s %s" % (time.strftime("%a %d %b", time.localtime(e["start_date"] / 1000)),
-                              e["name"][:50]))
+        print("  %-15s %s" % (local_time(e).strftime("%a %d %b"), e["name"][:50]))
     if len(events) > RAIL_LIMIT:
         print("  … and %d more" % (len(events) - RAIL_LIMIT))
     if check:
