@@ -1,14 +1,37 @@
 {
   "venue": "Harbour Event Centre",
-  "source": "Tixr groups HARBOUR, LIVE",
-  "generated": "2026-09-21T15:55:03+0000",
+  "source": "Tixr groups HARBOUR, LIVE, HALO",
+  "generated": "2026-09-21T16:03:31+0000",
   "events": [
+    {
+      "id": 203762,
+      "name": "FORMULA - T78",
+      "date": "Fri 25 Sep",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/203762",
+      "image": "images/events/tixr-203762.jpg",
+      "startsAt": 1790398800000
+    },
+    {
+      "id": 192435,
+      "name": "Da Tweekaz",
+      "date": "Sat 26 Sep",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/192435",
+      "image": "images/events/tixr-192435.jpg",
+      "startsAt": 1790485200000
+    },
     {
       "id": 191340,
       "name": "WHETHAN - WAREHOUSE.WAVS TOUR",
       "date": "Fri 09 Oct",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/191340",
       "image": "images/events/tixr-191340.jpg",
       "startsAt": 1791608400000
@@ -19,6 +42,7 @@
       "date": "Sat 10 Oct",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/197893",
       "image": "images/events/tixr-197893.jpg",
       "startsAt": 1791694800000
@@ -29,6 +53,7 @@
       "date": "Fri 16 Oct",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/200968",
       "image": "images/events/tixr-200968.jpg",
       "startsAt": 1792213200000
@@ -39,6 +64,7 @@
       "date": "Sat 17 Oct",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/203022",
       "image": "images/events/tixr-203022.jpg",
       "startsAt": 1792299600000
@@ -49,9 +75,32 @@
       "date": "Sat 24 Oct",
       "doors": "Doors 21:30",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/206701",
       "image": "images/events/tixr-206701.jpg",
       "startsAt": 1792902600000
+    },
+    {
+      "id": 207190,
+      "name": "DJ ASEEL LIVE IN VANCOUVER",
+      "date": "Sat 24 Oct",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/207190",
+      "image": "images/events/tixr-207190.jpg",
+      "startsAt": 1792904400000
+    },
+    {
+      "id": 207169,
+      "name": "Bass Nexus Halloween Party",
+      "date": "Fri 30 Oct",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/207169",
+      "image": "images/events/tixr-207169.jpg",
+      "startsAt": 1793422800000
     },
     {
       "id": 206580,
@@ -59,6 +108,7 @@
       "date": "Fri 13 Nov",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/206580",
       "image": "images/events/tixr-206580.jpg",
       "startsAt": 1794636000000
@@ -69,8 +119,20 @@
       "date": "Sat 14 Nov",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/203763",
       "image": "images/events/tixr-203763.jpg",
+      "startsAt": 1794722400000
+    },
+    {
+      "id": 200939,
+      "name": "THE LEGEND RETURNS",
+      "date": "Sat 14 Nov",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/200939",
+      "image": "images/events/tixr-200939.jpg",
       "startsAt": 1794722400000
     },
     {
@@ -79,6 +141,7 @@
       "date": "Fri 20 Nov",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/199031",
       "image": "images/events/tixr-199031.jpg",
       "startsAt": 1795240800000
@@ -89,6 +152,7 @@
       "date": "Sat 21 Nov",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202362",
       "image": "images/events/tixr-202362.jpg",
       "startsAt": 1795327200000
@@ -99,6 +163,7 @@
       "date": "Sun 22 Nov",
       "doors": "Doors 18:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/205606",
       "image": "images/events/tixr-205606.jpg",
       "startsAt": 1795399200000
@@ -109,6 +174,7 @@
       "date": "Fri 27 Nov",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/204102",
       "image": "images/events/tixr-204102.jpg",
       "startsAt": 1795845600000
@@ -119,6 +185,7 @@
       "date": "Sat 05 Dec",
       "doors": "Doors 17:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/207235",
       "image": "images/events/tixr-207235.jpg",
       "startsAt": 1796518800000
@@ -129,6 +196,7 @@
       "date": "Sat 05 Dec",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202363",
       "image": "images/events/tixr-202363.jpg",
       "startsAt": 1796536800000
@@ -139,6 +207,7 @@
       "date": "Fri 11 Dec",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202364",
       "image": "images/events/tixr-202364.jpg",
       "startsAt": 1797055200000
@@ -149,6 +218,7 @@
       "date": "Sat 12 Dec",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/205969",
       "image": "images/events/tixr-205969.jpg",
       "startsAt": 1797141600000
@@ -159,8 +229,20 @@
       "date": "Fri 18 Dec",
       "doors": "Doors 22:00",
       "age": "19+",
+      "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202775",
       "image": "images/events/tixr-202775.jpg",
+      "startsAt": 1797660000000
+    },
+    {
+      "id": 203596,
+      "name": "Tsu Nami - limerence live",
+      "date": "Fri 18 Dec",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/203596",
+      "image": "images/events/tixr-203596.jpg",
       "startsAt": 1797660000000
     }
   ]
