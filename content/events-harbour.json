@@ -1,18 +1,18 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-09-21T16:03:31+0000",
+  "generated": "2026-09-22T00:09:14+0000",
   "events": [
     {
       "id": 203762,
       "name": "FORMULA - T78",
       "date": "Fri 25 Sep",
-      "doors": "Doors 22:00",
+      "doors": "Doors 23:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Halo",
       "link": "https://tixr.com/e/203762",
       "image": "images/events/tixr-203762.jpg",
-      "startsAt": 1790398800000
+      "startsAt": 1790402400000
     },
     {
       "id": 192435,
@@ -244,6 +244,17 @@
       "link": "https://tixr.com/e/203596",
       "image": "images/events/tixr-203596.jpg",
       "startsAt": 1797660000000
+    },
+    {
+      "id": 207902,
+      "name": "NYE 2026 ANDREW RAYEL w/ DAIJO",
+      "date": "Thu 31 Dec",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/207902",
+      "image": "images/events/tixr-207902.jpg",
+      "startsAt": 1798783200000
     }
   ]
 }
