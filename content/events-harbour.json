@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-09-23T14:15:50+0000",
+  "generated": "2026-09-23T23:44:25+0000",
   "events": [
     {
       "id": 203762,
@@ -155,6 +155,17 @@
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202362",
       "image": "images/events/tixr-202362.jpg",
+      "startsAt": 1795327200000
+    },
+    {
+      "id": 208325,
+      "name": "Yamagucci",
+      "date": "Sat 21 Nov",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/208325",
+      "image": "images/events/tixr-208325.jpg",
       "startsAt": 1795327200000
     },
     {
