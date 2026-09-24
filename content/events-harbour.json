@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-09-24T14:14:15+0000",
+  "generated": "2026-09-24T23:53:58+0000",
   "events": [
     {
       "id": 203762,
@@ -101,6 +101,17 @@
       "link": "https://tixr.com/e/207169",
       "image": "images/events/tixr-207169.jpg",
       "startsAt": 1793422800000
+    },
+    {
+      "id": 208522,
+      "name": "HARIS DZINOVIC - LIVE IN VANCOUVER",
+      "date": "Fri 13 Nov",
+      "doors": "Doors 21:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/208522",
+      "image": "images/events/tixr-208522.jpg",
+      "startsAt": 1794632400000
     },
     {
       "id": 206580,
