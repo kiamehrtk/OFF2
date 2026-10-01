@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-09-30T15:56:55+0000",
+  "generated": "2026-10-01T00:34:52+0000",
   "events": [
     {
       "id": 191340,
@@ -68,6 +68,17 @@
       "link": "https://tixr.com/e/207190",
       "image": "images/events/tixr-207190.jpg",
       "startsAt": 1792904400000
+    },
+    {
+      "id": 201204,
+      "name": "PLAYGRND SERIES VANCOUVER: HALLOWEEN EDITION",
+      "date": "Fri 30 Oct",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/201204",
+      "image": "images/events/tixr-201204.jpg",
+      "startsAt": 1793422800000
     },
     {
       "id": 207169,
