@@ -1,19 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-17T23:09:33+0000",
+  "generated": "2026-10-18T13:20:35+0000",
   "events": [
-    {
-      "id": 203022,
-      "name": "SULLIVAN KING",
-      "date": "Sat 17 Oct",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Blueprint",
-      "link": "https://tixr.com/e/203022",
-      "image": "images/events/tixr-203022.jpg",
-      "startsAt": 1792299600000
-    },
     {
       "id": 206701,
       "name": "Persian Halloween 2026",
