@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-20T14:20:19+0000",
+  "generated": "2026-10-20T23:55:23+0000",
   "events": [
     {
       "id": 206701,
@@ -178,6 +178,17 @@
       "link": "https://tixr.com/e/204102",
       "image": "images/events/tixr-204102.jpg",
       "startsAt": 1795845600000
+    },
+    {
+      "id": 211735,
+      "name": "SASY - Vancouver w/ Xband",
+      "date": "Fri 04 Dec",
+      "doors": "Doors 23:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/211735",
+      "image": "images/events/tixr-211735.jpg",
+      "startsAt": 1796450400000
     },
     {
       "id": 207235,
