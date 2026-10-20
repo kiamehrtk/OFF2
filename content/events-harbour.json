@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-19T16:29:45+0000",
+  "generated": "2026-10-20T00:23:51+0000",
   "events": [
     {
       "id": 206701,
@@ -266,6 +266,17 @@
       "link": "https://tixr.com/e/209425",
       "image": "images/events/tixr-209425.jpg",
       "startsAt": 1801375200000
+    },
+    {
+      "id": 211259,
+      "name": "D.O.D",
+      "date": "Fri 05 Mar",
+      "doors": "Doors 23:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
+      "link": "https://tixr.com/e/211259",
+      "image": "images/events/tixr-211259.jpg",
+      "startsAt": 1804312800000
     }
   ]
 }
