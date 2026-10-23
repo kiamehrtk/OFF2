@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-23T14:16:14+0000",
+  "generated": "2026-10-23T23:52:11+0000",
   "events": [
     {
       "id": 206701,
@@ -211,6 +211,17 @@
       "link": "https://tixr.com/e/202363",
       "image": "images/events/tixr-202363.jpg",
       "startsAt": 1796536800000
+    },
+    {
+      "id": 211056,
+      "name": "James Hype",
+      "date": "Fri 11 Dec",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/211056",
+      "image": "images/events/tixr-211056.jpg",
+      "startsAt": 1797051600000
     },
     {
       "id": 202364,
