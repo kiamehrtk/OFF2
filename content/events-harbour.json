@@ -1,30 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-24T23:18:06+0000",
+  "generated": "2026-10-25T13:44:15+0000",
   "events": [
-    {
-      "id": 206701,
-      "name": "Persian Halloween 2026",
-      "date": "Sat 24 Oct",
-      "doors": "Doors 21:30",
-      "age": "19+",
-      "venue": "Harbour Event Centre",
-      "link": "https://tixr.com/e/206701",
-      "image": "images/events/tixr-206701.jpg",
-      "startsAt": 1792902600000
-    },
-    {
-      "id": 207190,
-      "name": "DJ ASEEL LIVE IN VANCOUVER",
-      "date": "Sat 24 Oct",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Halo",
-      "link": "https://tixr.com/e/207190",
-      "image": "images/events/tixr-207190.jpg",
-      "startsAt": 1792904400000
-    },
     {
       "id": 201204,
       "name": "PLAYGRND SERIES VANCOUVER: HALLOWEEN EDITION",
