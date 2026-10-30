@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-29T16:11:06+0000",
+  "generated": "2026-10-30T01:04:01+0000",
   "events": [
     {
       "id": 201204,
@@ -29,12 +29,12 @@
       "id": 211049,
       "name": "Dooms Night After Party",
       "date": "Sat 31 Oct",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/211049",
       "image": "images/events/tixr-211049.jpg",
-      "startsAt": 1793512800000
+      "startsAt": 1793509200000
     },
     {
       "id": 209186,
