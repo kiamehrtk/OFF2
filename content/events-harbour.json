@@ -1,30 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-10-31T00:48:49+0000",
+  "generated": "2026-10-31T15:22:01+0000",
   "events": [
-    {
-      "id": 201204,
-      "name": "PLAYGRND SERIES VANCOUVER: HALLOWEEN EDITION",
-      "date": "Fri 30 Oct",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre",
-      "link": "https://tixr.com/e/201204",
-      "image": "images/events/tixr-201204.jpg",
-      "startsAt": 1793422800000
-    },
-    {
-      "id": 207169,
-      "name": "Bass Nexus Halloween Party",
-      "date": "Fri 30 Oct",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Halo",
-      "link": "https://tixr.com/e/207169",
-      "image": "images/events/tixr-207169.jpg",
-      "startsAt": 1793422800000
-    },
     {
       "id": 211049,
       "name": "Dooms Night After Party",
