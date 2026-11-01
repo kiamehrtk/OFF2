@@ -1,19 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-01T00:09:29+0000",
+  "generated": "2026-11-01T16:04:18+0000",
   "events": [
-    {
-      "id": 211049,
-      "name": "Dooms Night After Party",
-      "date": "Sat 31 Oct",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre",
-      "link": "https://tixr.com/e/211049",
-      "image": "images/events/tixr-211049.jpg",
-      "startsAt": 1793509200000
-    },
     {
       "id": 209186,
       "name": "STMPD RECORDS 10TH ANNIVERSARY TOUR w/ Julian Jordan / Firebeatz",
