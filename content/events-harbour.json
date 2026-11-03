@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-02T19:31:31+0000",
+  "generated": "2026-11-03T02:56:02+0000",
   "events": [
     {
       "id": 209186,
@@ -222,6 +222,17 @@
       "link": "https://tixr.com/e/207902",
       "image": "images/events/tixr-207902.jpg",
       "startsAt": 1798783200000
+    },
+    {
+      "id": 213264,
+      "name": "DJ MIE",
+      "date": "Sat 02 Jan",
+      "doors": "Doors 23:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/213264",
+      "image": "images/events/tixr-213264.jpg",
+      "startsAt": 1798956000000
     },
     {
       "id": 212186,
