@@ -1,18 +1,18 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-05T17:26:21+0000",
+  "generated": "2026-11-06T01:34:59+0000",
   "events": [
     {
       "id": 209186,
       "name": "STMPD RECORDS 10TH ANNIVERSARY TOUR w/ Julian Jordan / Firebeatz",
       "date": "Fri 06 Nov",
-      "doors": "Doors 22:00",
+      "doors": "Doors 21:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/209186",
       "image": "images/events/tixr-209186.jpg",
-      "startsAt": 1794031200000
+      "startsAt": 1794027600000
     },
     {
       "id": 211504,
