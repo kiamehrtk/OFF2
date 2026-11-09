@@ -1,19 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-09T00:56:27+0000",
+  "generated": "2026-11-09T19:51:36+0000",
   "events": [
-    {
-      "id": 211504,
-      "name": "MAJOR LEAGUE DJZ",
-      "date": "Tue 10 Nov",
-      "doors": "Doors 21:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Halo",
-      "link": "https://tixr.com/e/211504",
-      "image": "images/events/tixr-211504.jpg",
-      "startsAt": 1794373200000
-    },
     {
       "id": 208522,
       "name": "HARIS DZINOVIC - LIVE IN VANCOUVER",
@@ -200,6 +189,17 @@
       "link": "https://tixr.com/e/203596",
       "image": "images/events/tixr-203596.jpg",
       "startsAt": 1797660000000
+    },
+    {
+      "id": 214047,
+      "name": "Sick Individuals",
+      "date": "Sat 19 Dec",
+      "doors": "Doors 21:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/214047",
+      "image": "images/events/tixr-214047.jpg",
+      "startsAt": 1797742800000
     },
     {
       "id": 207902,
