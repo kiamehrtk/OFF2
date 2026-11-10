@@ -10,9 +10,16 @@ permissions:
 
 jobs:
   sync:
-    runs-on: macos-latest      # sips, used to downsize the posters
+    # Linux, not macOS: the macOS pool is heavily queued and a scheduled run
+    # was cancelled after waiting 15 minutes for a machine without running a
+    # single step. Pillow replaces the macOS-only sips for poster resizing.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - name: Install Pillow (poster resizing)
+        run: python3 -m pip install --quiet --disable-pip-version-check Pillow
 
       - name: Pull events and regenerate listings
         env:

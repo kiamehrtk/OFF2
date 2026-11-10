@@ -91,13 +91,38 @@ def poster(event):
         open(dest, "wb").write(data)
         # Same recipe as the rest of the site's imagery — full-size flyers
         # are ~1200-2000px and would undo the performance work.
-        subprocess.run(["sips", "--resampleWidth", "900", "-s", "format", "jpeg",
-                        "-s", "formatOptions", "78", dest, "--out", dest],
-                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
+        downsize(dest, width=900, quality=78)
         return rel
     except Exception as exc:
         print("  ! poster failed for %s: %s" % (event["id"], exc))
         return None
+
+
+def downsize(path, width, quality):
+    """Resize in place. Pillow where available, else macOS sips.
+
+    This ran on macos-latest purely because sips is macOS-only, and that
+    runner pool is heavily queued — a scheduled run was once cancelled after
+    waiting 15 minutes for a machine, having executed nothing. Pillow lets
+    the job run on Linux runners, which are far more available.
+    """
+    try:
+        from PIL import Image
+        with Image.open(path) as im:
+            im = im.convert("RGB")
+            if im.width > width:
+                height = round(im.height * width / im.width)
+                im = im.resize((width, height), Image.LANCZOS)
+            im.save(path, "JPEG", quality=quality, optimize=True)
+        return
+    except ImportError:
+        pass
+    except Exception as exc:
+        print("  ! resize failed for %s: %s" % (os.path.basename(path), exc))
+        return
+    subprocess.run(["sips", "--resampleWidth", str(width), "-s", "format", "jpeg",
+                    "-s", "formatOptions", str(quality), path, "--out", path],
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
 
 
 # Tixr timestamps are epoch ms, so they carry no timezone. Formatting them
