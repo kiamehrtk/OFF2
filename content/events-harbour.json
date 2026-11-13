@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-13T01:51:38+0000",
+  "generated": "2026-11-13T17:14:34+0000",
   "events": [
     {
       "id": 208522,
@@ -84,12 +84,12 @@
       "id": 205606,
       "name": "KING - Live in Vancouver",
       "date": "Sun 22 Nov",
-      "doors": "Doors 19:00",
+      "doors": "Doors 18:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/205606",
       "image": "images/events/tixr-205606.jpg",
-      "startsAt": 1795399200000
+      "startsAt": 1795395600000
     },
     {
       "id": 204102,
