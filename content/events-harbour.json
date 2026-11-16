@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-16T01:04:16+0000",
+  "generated": "2026-11-16T19:38:38+0000",
   "events": [
     {
       "id": 199031,
@@ -95,12 +95,12 @@
       "id": 211056,
       "name": "James Hype",
       "date": "Fri 11 Dec",
-      "doors": "Doors 22:00",
+      "doors": "Doors 23:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/211056",
       "image": "images/events/tixr-211056.jpg",
-      "startsAt": 1797051600000
+      "startsAt": 1797055200000
     },
     {
       "id": 202364,
@@ -150,12 +150,12 @@
       "id": 214047,
       "name": "Sick Individuals",
       "date": "Sat 19 Dec",
-      "doors": "Doors 22:00",
+      "doors": "Doors 23:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/214047",
       "image": "images/events/tixr-214047.jpg",
-      "startsAt": 1797742800000
+      "startsAt": 1797746400000
     },
     {
       "id": 207902,
@@ -216,12 +216,12 @@
       "id": 213547,
       "name": "MADDIX PRES. EXTATIC 2027: NOW WE RAVE TOUR",
       "date": "Fri 29 Jan",
-      "doors": "Doors 22:00",
+      "doors": "Doors 23:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/213547",
       "image": "images/events/tixr-213547.jpg",
-      "startsAt": 1801285200000
+      "startsAt": 1801288800000
     },
     {
       "id": 209425,
@@ -233,6 +233,28 @@
       "link": "https://tixr.com/e/209425",
       "image": "images/events/tixr-209425.jpg",
       "startsAt": 1801375200000
+    },
+    {
+      "id": 214360,
+      "name": "URIAH HEEP - The Magician's Farewell Tour plus Special Guests",
+      "date": "Wed 17 Feb",
+      "doors": "Doors 19:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/214360",
+      "image": "images/events/tixr-214360.jpg",
+      "startsAt": 1802916000000
+    },
+    {
+      "id": 214984,
+      "name": "Dillon Francis",
+      "date": "Fri 26 Feb",
+      "doors": "Doors 23:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/214984",
+      "image": "images/events/tixr-214984.jpg",
+      "startsAt": 1803708000000
     },
     {
       "id": 211259,
