@@ -1,40 +1,40 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-17T03:56:08+0000",
+  "generated": "2026-11-17T18:36:35+0000",
   "events": [
     {
       "id": 199031,
       "name": "ATLiens - DESTRUCTION OF A UFO TOUR",
       "date": "Fri 20 Nov",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/199031",
       "image": "images/events/tixr-199031.jpg",
-      "startsAt": 1795240800000
+      "startsAt": 1795237200000
     },
     {
       "id": 202362,
       "name": "WILL SPARKS",
       "date": "Sat 21 Nov",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202362",
       "image": "images/events/tixr-202362.jpg",
-      "startsAt": 1795327200000
+      "startsAt": 1795323600000
     },
     {
       "id": 208325,
       "name": "Yamagucci",
       "date": "Sat 21 Nov",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Halo",
       "link": "https://tixr.com/e/208325",
       "image": "images/events/tixr-208325.jpg",
-      "startsAt": 1795327200000
+      "startsAt": 1795323600000
     },
     {
       "id": 205606,
@@ -51,133 +51,144 @@
       "id": 204102,
       "name": "INZO - Local Void Takeover",
       "date": "Fri 27 Nov",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/204102",
       "image": "images/events/tixr-204102.jpg",
-      "startsAt": 1795845600000
+      "startsAt": 1795842000000
     },
     {
       "id": 211735,
       "name": "SASY - Vancouver w/ Xband",
       "date": "Fri 04 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/211735",
       "image": "images/events/tixr-211735.jpg",
-      "startsAt": 1796450400000
+      "startsAt": 1796446800000
     },
     {
       "id": 207235,
       "name": "Emo Orchestra with The Spill Canvas - An Evening of Emo",
       "date": "Sat 05 Dec",
-      "doors": "Doors 19:00",
+      "doors": "Doors 18:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/207235",
       "image": "images/events/tixr-207235.jpg",
-      "startsAt": 1796522400000
+      "startsAt": 1796518800000
     },
     {
       "id": 202363,
       "name": "VIRTUAL RIOT & BLANKE: FAR FROM HOME",
       "date": "Sat 05 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202363",
       "image": "images/events/tixr-202363.jpg",
-      "startsAt": 1796536800000
+      "startsAt": 1796533200000
     },
     {
       "id": 211056,
       "name": "James Hype",
       "date": "Fri 11 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/211056",
       "image": "images/events/tixr-211056.jpg",
-      "startsAt": 1797055200000
+      "startsAt": 1797051600000
     },
     {
       "id": 202364,
       "name": "ALEX WANN",
       "date": "Fri 11 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202364",
       "image": "images/events/tixr-202364.jpg",
-      "startsAt": 1797055200000
+      "startsAt": 1797051600000
     },
     {
       "id": 205969,
       "name": "AUDIEN - PROGRESSIVE HOUSE NEVER DIED",
       "date": "Sat 12 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/205969",
       "image": "images/events/tixr-205969.jpg",
-      "startsAt": 1797141600000
+      "startsAt": 1797138000000
     },
     {
       "id": 202775,
       "name": "THE SHAH - DAIJO",
       "date": "Fri 18 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/202775",
       "image": "images/events/tixr-202775.jpg",
-      "startsAt": 1797660000000
+      "startsAt": 1797656400000
     },
     {
       "id": 203596,
       "name": "Tsu Nami - limerence live",
       "date": "Fri 18 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Halo",
       "link": "https://tixr.com/e/203596",
       "image": "images/events/tixr-203596.jpg",
-      "startsAt": 1797660000000
+      "startsAt": 1797656400000
     },
     {
       "id": 214047,
       "name": "Sick Individuals",
       "date": "Sat 19 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/214047",
       "image": "images/events/tixr-214047.jpg",
-      "startsAt": 1797746400000
+      "startsAt": 1797742800000
     },
     {
       "id": 207902,
       "name": "NYE 2026 ANDREW RAYEL w/ DAIJO",
       "date": "Thu 31 Dec",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/207902",
       "image": "images/events/tixr-207902.jpg",
-      "startsAt": 1798783200000
+      "startsAt": 1798779600000
     },
     {
       "id": 213264,
       "name": "DJ MIE",
       "date": "Sat 02 Jan",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/213264",
       "image": "images/events/tixr-213264.jpg",
-      "startsAt": 1798956000000
+      "startsAt": 1798952400000
+    },
+    {
+      "id": 212186,
+      "name": "Jason Ross Presents: The True North Tour",
+      "date": "Sat 16 Jan",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Blueprint",
+      "link": "https://tixr.com/e/212186",
+      "image": "images/events/tixr-212186.jpg",
+      "startsAt": 1800162000000
     },
     {
       "id": 213835,
@@ -191,48 +202,37 @@
       "startsAt": 1800162000000
     },
     {
-      "id": 212186,
-      "name": "Jason Ross Presents: The True North Tour",
-      "date": "Sat 16 Jan",
-      "doors": "Doors 23:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Blueprint",
-      "link": "https://tixr.com/e/212186",
-      "image": "images/events/tixr-212186.jpg",
-      "startsAt": 1800165600000
-    },
-    {
       "id": 210077,
       "name": "ZINGARA - THE ALIENS ARE MAKING SOUNDS",
       "date": "Sat 23 Jan",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/210077",
       "image": "images/events/tixr-210077.jpg",
-      "startsAt": 1800770400000
+      "startsAt": 1800766800000
     },
     {
       "id": 213547,
       "name": "MADDIX PRES. EXTATIC 2027: NOW WE RAVE TOUR",
       "date": "Fri 29 Jan",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/213547",
       "image": "images/events/tixr-213547.jpg",
-      "startsAt": 1801288800000
+      "startsAt": 1801285200000
     },
     {
       "id": 209425,
       "name": "LEVEL UP - THE RITUAL TOUR",
       "date": "Sat 30 Jan",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/209425",
       "image": "images/events/tixr-209425.jpg",
-      "startsAt": 1801375200000
+      "startsAt": 1801371600000
     },
     {
       "id": 214360,
@@ -249,23 +249,23 @@
       "id": 214984,
       "name": "Dillon Francis",
       "date": "Fri 26 Feb",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre",
       "link": "https://tixr.com/e/214984",
       "image": "images/events/tixr-214984.jpg",
-      "startsAt": 1803708000000
+      "startsAt": 1803704400000
     },
     {
       "id": 211259,
       "name": "D.O.D",
       "date": "Fri 05 Mar",
-      "doors": "Doors 23:00",
+      "doors": "Doors 22:00",
       "age": "19+",
       "venue": "Harbour Event Centre · Blueprint",
       "link": "https://tixr.com/e/211259",
       "image": "images/events/tixr-211259.jpg",
-      "startsAt": 1804312800000
+      "startsAt": 1804309200000
     }
   ]
 }
