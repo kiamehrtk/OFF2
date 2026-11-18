@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-17T18:36:35+0000",
+  "generated": "2026-11-18T02:55:45+0000",
   "events": [
     {
       "id": 199031,
@@ -178,6 +178,28 @@
       "link": "https://tixr.com/e/213264",
       "image": "images/events/tixr-213264.jpg",
       "startsAt": 1798952400000
+    },
+    {
+      "id": 214191,
+      "name": "The Glitch Mob w/ Special Guests",
+      "date": "Sat 09 Jan",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/214191",
+      "image": "images/events/tixr-214191.jpg",
+      "startsAt": 1799557200000
+    },
+    {
+      "id": 215157,
+      "name": "Pursuit of Happiness - Throwback EDM Event",
+      "date": "Fri 15 Jan",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre · Halo",
+      "link": "https://tixr.com/e/215157",
+      "image": "images/events/tixr-215157.jpg",
+      "startsAt": 1800075600000
     },
     {
       "id": 212186,
