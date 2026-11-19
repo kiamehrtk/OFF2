@@ -1,7 +1,7 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-18T18:07:37+0000",
+  "generated": "2026-11-19T02:36:06+0000",
   "events": [
     {
       "id": 199031,
@@ -255,6 +255,17 @@
       "link": "https://tixr.com/e/209425",
       "image": "images/events/tixr-209425.jpg",
       "startsAt": 1801371600000
+    },
+    {
+      "id": 215365,
+      "name": "ZOMBOY",
+      "date": "Fri 05 Feb",
+      "doors": "Doors 22:00",
+      "age": "19+",
+      "venue": "Harbour Event Centre",
+      "link": "https://tixr.com/e/215365",
+      "image": "images/events/tixr-215365.jpg",
+      "startsAt": 1801890000000
     },
     {
       "id": 214360,
