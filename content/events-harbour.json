@@ -1,19 +1,8 @@
 {
   "venue": "Harbour Event Centre",
   "source": "Tixr groups HARBOUR, LIVE, HALO",
-  "generated": "2026-11-28T03:20:10+0000",
+  "generated": "2026-11-28T17:35:36+0000",
   "events": [
-    {
-      "id": 204102,
-      "name": "INZO - Local Void Takeover",
-      "date": "Fri 27 Nov",
-      "doors": "Doors 22:00",
-      "age": "19+",
-      "venue": "Harbour Event Centre · Blueprint",
-      "link": "https://tixr.com/e/204102",
-      "image": "images/events/tixr-204102.jpg",
-      "startsAt": 1795842000000
-    },
     {
       "id": 211735,
       "name": "SASY - Vancouver w/ Xband",
